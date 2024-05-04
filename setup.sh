@@ -114,7 +114,7 @@ echo -e "[ ${green}INFO${NC} ] Alright good ... installation file is ready"
 sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check permission : "
 
-PERMISSION
+#PERMISSION
 if [ -f /home/needupdate ]; then
 red "Your script need to update first !"
 exit 0
