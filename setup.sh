@@ -4,7 +4,7 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 #########################
 
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/izin > /root/tmp
+    curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/main/izin > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -20,9 +20,9 @@ BURIQ () {
     done
     rm -f  /root/tmp
 }
-# https://raw.githubusercontent.com/JerrySBG/scvps/izin 
+# https://raw.githubusercontent.com/JerrySBG/scvps/main/izin 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/izin | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -39,7 +39,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/izin | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -341,9 +341,9 @@ DATE_EXEC="$(date "+%d %b %Y %I:%M")"
 CITY=$(cat $TMPFILE | jq '.city' | sed 's/"//g')
 REGION=$(cat $TMPFILE | jq '.region' | sed 's/"//g')
 COUNTRY=$(cat $TMPFILE | jq '.country' | sed 's/"//g')
-Name=$(curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/izin | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $MYIP | awk '{print $2}')
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/izin | awk '{print 3}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | awk '{print 3}' | grep $MYIP)
 TEXT="
 <code>◇━━━━━━━━━━━━━━◇</code>
 <b>  ⚠️ AUTOSCRIPT INSTALLER ⚠️</b>
