@@ -89,7 +89,7 @@ secs_to_human() {
     echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minute's $(( ${1} % 60 )) seconds"
 }
 start=$(date +%s)
-ln -fs /usr/share/zoneinfo/America/Denver /etc/localtime
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 
@@ -115,17 +115,17 @@ sleep 2
 echo -ne "[ ${green}INFO${NC} ] Check permission : "
 
 #PERMISSION
-if [ -f /home/needupdate ]; then
-red "Your script need to update first !"
-exit 0
-elif [ "$res" = "Permission Accepted..." ]; then
-green "Permission Accepted!"
-else
-red "Permission Denied!"
-rm setup.sh > /dev/null 2>&1
-sleep 5
-exit 0
-fi
+#if [ -f /home/needupdate ]; then
+#red "Your script need to update first !"
+#exit 0
+#elif [ "$res" = "Permission Accepted..." ]; then
+#green "Permission Accepted!"
+#else
+#red "Permission Denied!"
+#rm setup.sh > /dev/null 2>&1
+#sleep 5
+#exit 0
+#fi
 sleep 2
 rm -rf /etc/per
 mkdir -p /etc/per
@@ -160,10 +160,10 @@ fi
 fi
 
 echo ""
-wget -q https://raw.githubusercontent.com/JerrySBG/scvps/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
+wget -q https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/dependencies.sh;chmod +x dependencies.sh;./dependencies.sh
 rm dependencies.sh
 clear
-wget -q https://raw.githubusercontent.com/JerrySBG/scvps/tarong/api;chmod +x api;./api
+wget -q https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/api;chmod +x api;./api
 clear
 yellow "Add Domain for vmess/vless/trojan dll"
 echo " "
@@ -187,12 +187,12 @@ echo "IP=$pp" > /var/lib/ipvps.conf
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/SSH/kubing.sh && chmod +x kuhing.sh && ./kuhing.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/SSH/kubing.sh && chmod +x kuhing.sh && ./kuhing.sh
 rm -f /root/kuhing.sh
 clear
 else
 echo -e "Random Subdomain/Domain is used"
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/SSH/kubing.sh && chmod +x kuhing.sh && ./kuhing.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/SSH/kubing.sh && chmod +x kuhing.sh && ./kuhing.sh
 rm -f /root/kuhing.sh
 clear
 fi
@@ -237,48 +237,48 @@ echo -e "${tyblue}|     PROCESS INSTALLED SSH & OPENVPN      |${NC}"
 echo -e "${tyblue}'------------------------------------------'${NC}"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/SSH/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/SSH/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 #Install Xray
 echo -e "${tyblue}.------------------------------------------.${NC}"
 echo -e "${tyblue}|          PROCESS INSTALLED XRAY             |${NC}"
 echo -e "${tyblue}'------------------------------------------'${NC}"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/XRAY/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/XRAY/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 #Install SSH Websocket
 echo -e "${tyblue}.------------------------------------------.${NC}"
 echo -e "${tyblue}|      PROCESS INSTALLED WEBSOCKET SSH     |${NC}"
 echo -e "${tyblue}'------------------------------------------'${NC}"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/WEBSOCKET/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/WEBSOCKET/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 #Install OHP Websocket
 echo -e "${tyblue}.------------------------------------------.${NC}"
 echo -e "${tyblue}|          PROCESS INSTALLED OHP              |${NC}"
 echo -e "${tyblue}'------------------------------------------'${NC}"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/OPENVPN/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/OPENVPN/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 #Download Extra Menu
 echo -e "${tyblue}.------------------------------------------.${NC}"
 echo -e "${tyblue}|           DOWNLOAD EXTRA MENU              |${NC}"
 echo -e "${tyblue}'------------------------------------------'${NC}"
 sleep 2
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/MENU/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/MENU/update.sh && chmod +x update.sh && ./update.sh
 clear
 #Download Slowdns
 echo -e "${tyblue}.------------------------------------------.${NC}"
 echo -e "${tyblue}|           DOWNLOAD SLOWDNS                  |${NC}"
 echo -e "${tyblue}'------------------------------------------'${NC}"
 sleep 2
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/slowdns/Installsl.sh && chmod +x Installsl.sh && ./Installsl.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/slowdns/Installsl.sh && chmod +x Installsl.sh && ./Installsl.sh
 clear
 #Download Limit
 echo -e "${tyblue}.------------------------------------------.${NC}"
 echo -e "${tyblue}|           DOWNLOAD LIMIT XRAY                |${NC}"
 echo -e "${tyblue}'------------------------------------------'${NC}"
 sleep 2
-wget https://raw.githubusercontent.com/JerrySBG/scvps/tarong/limit/limit.sh && chmod +x limit.sh && ./limit.sh
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/limit/limit.sh && chmod +x limit.sh && ./limit.sh
 clear
 cat> /root/.profile << END
 # ~/.profile: executed by Bourne-compatible login shells.
@@ -305,7 +305,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/tarong/version  )
+serverV=$( curl -sS https://raw.githubusercontent.com/JerrySBG/scvps/main/tarong/version  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
