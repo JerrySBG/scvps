@@ -1,5 +1,5 @@
 ### ACTUALIZAR VPS 
-<pre><code>
+<pre><code> apt update && apt upgrade -y && update-grub && sleep 2 && reboot
 </code></pre>
 
 ### INSTALAR SCRIPT 
