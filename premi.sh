@@ -36,12 +36,12 @@ clear && clear && clear
 clear;clear;clear
 
   # // Banner
-echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "$NC----------------------------------------------------------${NC}"
 echo -e " ${BRED} Bienvenido al Auto-Script MOD´s EDICION${NC}"
 echo -e " ${YELLOW} Esto Configurará Rápidamente el SCRIPT VPN en su Servidor${NC}"
 echo -e " ${YELLOW} Autor : ${RED}JERRY® ${NC}( ${YELLOW} Hecho en Mexico ${NC})${NC}"
 echo -e " ${RED} © DEV JERRY-SBG${YELLOW}(${YELLOW} 2024 ${NC})${NC}"
-echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo -e "$NC----------------------------------------------------------${NC}"
 echo ""
 sleep 2
 ###### IZIN SC 
@@ -152,12 +152,11 @@ echo -e "[ ${yell}DETECTADO${NC} ] ${BIBlue}Script ya Instalado"
 echo -ne "[ ${red}ATENCION${NC} ] ${BIBlue}¿Quieres Instalar de Nuevo? ? (y/n)? "
 read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
-rm premi.sh
+rm setup.sh
 sleep 10
 exit 0
 else
 clear
-rmdir /usr/local/ddos
 fi
 fi
 ### Status
@@ -165,9 +164,9 @@ function print_ok() {
     echo -e "${OK} ${BLUE} $1 ${FONT}"
 }
 function print_install() {
-    echo -e "${green} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${FONT}"
+	echo -e "${green} =============================== ${FONT}"
     echo -e "${YELLOW} # $1 ${FONT}"
-    echo -e "${green} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${FONT}"
+	echo -e "${green} =============================== ${FONT}"
     sleep 1
 }
 
@@ -177,9 +176,9 @@ function print_error() {
 
 function print_success() {
     if [[ 0 -eq $? ]]; then
-        echo -e "${green} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${FONT}"
+		echo -e "${green} =============================== ${FONT}"
         echo -e "${Green} # $1 Instalado Correctamente"
-        echo -e "${green} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ${FONT}"
+		echo -e "${green} =============================== ${FONT}"
         sleep 2
     fi
 }
@@ -337,20 +336,19 @@ KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $2}')
 EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $3}')
-TIMEZONE=$(printf '%(%I:%M:%S %p)T')
+TIMEZONE=$(printf '%(%I:%M %p)T')
 TEXT="
-<code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<b> 🔥 AUTOSCRIPT PREMIUM 🔥</b>
-<code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
+<code>────────────────────</code>
+<b> 🟢 NOTIFICACION DE VPS 🟢</b>
+<code>────────────────────</code>
 <code>USUARIO : </code><code>$USRSC</code>
 <code>DOMINIO : </code><code>$domain</code>
-<code>FECHA   : </code><code>$TIME</code>
+<code>FEHCA   : </code><code>$TIME</code>
 <code>HORA    : </code><code>$TIMEZONE</code>
 <code>IP VPS  : </code><code>$ipsaya</code>
 <code>Exp Sc  : </code><code>$EXPSC</code>
-<code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
-<b>AUTOSCRIPT INSTALADO By JERRY࿐</b>
-<code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
+<code>────────────────────</code>
+<i>AUTOSCRIPT INSTALADO BY JERRY®</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/Jerry_SBG"},{"text":"Contack","url":"https://wa.me/+529241293310"}]]}'
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
@@ -805,17 +803,8 @@ print_success "Fail2ban Instalado"
 function ins_epro(){
 clear
 print_install "Instalación ePro WebSocket Proxy"
-    wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws.service
-    chmod +x /usr/bin/ws
-    chmod 644 /usr/bin/tun.conf
-systemctl disable ws
-systemctl stop ws
-systemctl enable ws
-systemctl start ws
-systemctl restart ws
+    wget https://${REPO}websocket/edu.sh && chmod +x edu.sh && ./edu.sh
+
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
