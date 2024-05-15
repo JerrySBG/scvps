@@ -3,9 +3,9 @@ cd
 rm -rf /etc/udp
 mkdir -p /etc/udp
 
-# change to time UTC-6
-echo "change to time UTC-6"
-ln -fs /usr/share/zoneinfo/America/Denver /etc/localtime
+# change to time GMT+7
+echo "change to time GMT+7"
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # install udp-custom
 echo downloading udp-custom

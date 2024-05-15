@@ -22,20 +22,20 @@ YellowBe="\033[5;33m"
 BlueBe="\033[5;34m"
 # . Liner
 function baris_panjang() {
-  echo -e "${BlueCyan} ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${Xark}"
+  echo -e "${BlueCyan} ———————————————————————————————————————————————${Xark}"
 }
 function Lunatic_Banner() {
 clear
 baris_panjang
-echo -e       "${ungu}                  SBG-VPS By JERRY               ${Xark}"
+echo -e       "${ungu}                  KANAERU TUNNELING               ${Xark}"
 baris_panjang
 }
 
 function Sc_Credit(){
 sleep 1
 baris_panjang
-echo -e       "${ungu}          Gracias por usar       ${Xark}"
-echo -e       "${ungu}         SCRIPT By JERRY-SBG       ${Xark}"
+echo -e       "${ungu}          Terimakasih sudah menggunakan-       ${Xark}"
+echo -e       "${ungu}         Script Credit By KANAERU TUNNELING      ${Xark}"
 baris_panjang
 exit 1
 }
@@ -85,7 +85,7 @@ while read expired
 do
 AKUN="$(echo $expired | cut -d: -f1)"
 ID="$(echo $expired | grep -v nobody | cut -d: -f3)"
-exp="$(chage -l $AKUN | grep "La Cuenta Expira" | awk -F": " '{print $2}')"
+exp="$(chage -l $AKUN | grep "Account expires" | awk -F": " '{print $2}')"
 status="$(passwd -S $AKUN | awk '{print $2}' )"
 if [[ $ID -ge 1000 ]]; then
 if [[ "$status" = "L" ]]; then
@@ -102,7 +102,7 @@ echo "   Account number: $JUMLAH   user"
 echo -e "\033[5;36m└──────────────────────────────────────────┘\033[0m"
 echo " "
 echo " "
-read -p "Ingrese el nombre de usuario para desbloquear :   " username
+read -p "Input Username To Unlock :   " username
 
 Loading_Animasi
 Loading_Succes
@@ -116,7 +116,7 @@ clear
   echo " "
   baris_panjang
   echo ""
-  echo -e "${GreenBe} Exitosamente ${Xark}"
+  echo -e "${GreenBe} successfully ${Xark}"
   echo ""
   echo -e "${Cyan} Username  : $username${Xark}"
   echo -e "${Cyan} Status    : Unlock ${Xark} "
@@ -126,7 +126,7 @@ clear
 
 else
 echo " "
-echo -e "Usuario ${red}$username${NC} no encontrado en su servidor."
+echo -e "Username ${red}$username${NC} not found in your server."
 echo " "
         exit 1
 fi

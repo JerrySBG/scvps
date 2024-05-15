@@ -11,55 +11,55 @@ YELL='\033[0;33m'
 red() { echo -e "\\033[32;1m${*}\\033[0m"; }
 # Getting
 MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mCargando...\e[0m"
+echo -e "\e[32mloading...\e[0m"
 clear
 IP=$(wget -qO- icanhazip.com)
 dateToday=$(date +"%Y-%m-%d")
-Name=$(curl https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $MYIP | awk '{print $2}')
+Name=$(curl https://raw.githubusercontent.com/RanTempest/scvps/main/izin | grep $MYIP | awk '{print $2}')
 
 setup_bot() {
     switch=$(grep -i "switch" /root/.bckupbot | awk '{print $2}')
-    echo "Vaya a @BotFather y escriba /newbot para crear un nuevo bot"
-    echo "Vaya a @MissRose_bot y escriba /id para obtener el ID de Telegram"
+    echo "Pergi ke @BotFather dan type /newbot untuk membuat bot baru"
+    echo "Pergi ke @MissRose_bot dan type /id untuk mendapatkan ID telegram"
     echo ""
     read -p "Bot Token : " getToken
     read -p "Admin ID  : " adminID
     echo "$getToken" >/root/.bckupbot
     echo "$adminID" >>/root/.bckupbot
     echo "switch $switch" >>/root/.bckupbot
-    read -n 1 -s -r -p "Presione cualquier tecla para regresar al menu Bot"
+    read -n 1 -s -r -p "Press any key to back on Bot menu"
     botbckpBot_menu
 }
 
 botBackup() {
     bottoken=$(sed -n '1p' /root/.bckupbot | awk '{print $1}')
     adminid=$(sed -n '2p' /root/.bckupbot | awk '{print $1}')
-    echo -e "[ ${green}INFO${NC} ] Crear contraseña para base de datos"
-    read -t 10 -p "Introducir la contraseña : "  InputPass
+    echo -e "[ ${green}INFO${NC} ] Create password for database"
+	read -t 10 -p "Enter password : "  InputPass
 	if [[ -z $InputPass ]]; then
 	InputPass="pakyavpnxbackdoor"
 	fi
 	sleep 1
-    echo -e "[ ${green}INFO${NC} ] • Copia de seguridad de datos VPS... "
+    echo -e "[ ${green}INFO${NC} ] • VPS Data Backup... "
     sleep 1
-    echo -e "[ ${green}INFO${NC} ] • Directorio creado... "
+    echo -e "[ ${green}INFO${NC} ] • Directory Created... "
     mkdir /root/backup &>/dev/null
     sleep 1
-    echo -e "[ ${green}INFO${NC} ] • Copia de seguridad de datos VPS Iniciar ahora... "
-    echo -e "[ ${green}INFO${NC} ] • Espere, copia de seguridad en proceso ahora... "
+    echo -e "[ ${green}INFO${NC} ] • VPS Data Backup Start Now... "
+    echo -e "[ ${green}INFO${NC} ] • Please Wait , Backup In Process Now... "
     sleep 1
-    cp /etc/passwd backup/ &>/dev/null
-    echo -e "[ ${green}INFO${NC} ] • Copia de seguridad de datos de contraseña..."
-    sleep 1
-    cp /etc/group backup/ &>/dev/null
-    echo -e "[ ${green}INFO${NC} ] • Copia de seguridad de datos del grupo..."
-    sleep 1
-    cp /etc/shadow backup/ &>/dev/null
-    echo -e "[ ${green}INFO${NC} ] • Copia de seguridad de datos shadow..."
-    sleep 1
-    cp /etc/gshadow backup/ &>/dev/null
-    echo -e "[ ${green}INFO${NC} ] • Copia de seguridad de los datos de gshadow..."
-    sleep 1
+	cp /etc/passwd backup/ &>/dev/null
+	echo -e "[ ${green}INFO${NC} ] • Backup passwd data..."
+	sleep 1
+	cp /etc/group backup/ &>/dev/null
+	echo -e "[ ${green}INFO${NC} ] • Backup group data..."
+	sleep 1
+	cp /etc/shadow backup/ &>/dev/null
+	echo -e "[ ${green}INFO${NC} ] • Backup shadow data..."
+	sleep 1
+	cp /etc/gshadow backup/ &>/dev/null
+	echo -e "[ ${green}INFO${NC} ] • Backup gshadow data..."
+	sleep 1
     cp -r /var/lib/kyt/ backup/kyt &>/dev/null
     cp -r /etc/xray backup/xray &>/dev/null
     cp -r /var/www/html backup/html &>/dev/null
@@ -84,12 +84,12 @@ botBackup() {
     curl -Ss --request GET \
         --url "https://api.telegram.org/bot${bottoken}/sendMessage?chat_id=${adminid}&text=File Path : <code>${filePath}</code>&parse_mode=html" &>/dev/null
 
-    echo -e "[ ${green}INFO${NC} ] • Completado... "
+    echo -e "[ ${green}INFO${NC} ] • Completed... "
 
     rm -rf /root/backup
     rm -r /root/$IP-$Name-$dateToday.zip
     rm -f /root/t1
-    read -n 1 -s -r -p "Presione cualquier tecla para regresar al MENU"
+    read -n 1 -s -r -p "Press any key to back on menu"
     botbckpBot_menu
 }
 
@@ -100,35 +100,35 @@ restoreBot() {
     curl -Ss --request GET \
         --url "https://api.telegram.org/file/bot${bottoken}/${filePath}?file_id=${fileId}" >backup.zip
 
-    echo -e "[ ${green}INFO${NC} ] • Restaurar datos..."
-    read -rp "Password File: "  InputPass
-    echo -e "[ ${green}INFO${NC} ] • Obteniendo tus datos..."
-    unzip -P $InputPass /root/backup.zip &> /dev/null
-    echo -e "[ ${green}INFO${NC} ] • Comenzando a restaurar datos..."
+    echo -e "[ ${green}INFO${NC} ] • Restore Data..."
+	read -rp "Password File: "  InputPass
+	echo -e "[ ${green}INFO${NC} ] • Getting your data..."
+	unzip -P $InputPass /root/backup.zip &> /dev/null
+    echo -e "[ ${green}INFO${NC} ] • Starting to restore data..."
     rm -f /root/backup.zip &> /dev/null
-    sleep 1
+	sleep 1
     cd /root/backup
-    echo -e "[ ${green}INFO${NC} ] • Espere, la restauración está en proceso ahora... "
-    sleep 1
-    cp passwd /etc/ &>/dev/null
-    echo -e "[ ${green}INFO${NC} ] • Restaurando datos de contraseña..."
-    sleep 1
-    cp group /etc/ &>/dev/null
-    echo -e "[ ${green}INFO${NC} ] • Restaurando datos del grupo..."
-    sleep 1
-    cp shadow /etc/ &>/dev/null
-    echo -e "[ ${green}INFO${NC} ] • Restaurando datos de shadow..."
-    sleep 1
-    cp gshadow /etc/ &>/dev/null
-    echo -e "[ ${green}INFO${NC} ] • Restaurando datos de gshadow..."
-    sleep 1
+	echo -e "[ ${green}INFO${NC} ] • Please Wait , Restoring In Process Now... "
+	sleep 1
+	cp passwd /etc/ &>/dev/null
+	echo -e "[ ${green}INFO${NC} ] • Restoring passwd data..."
+	sleep 1
+	cp group /etc/ &>/dev/null
+	echo -e "[ ${green}INFO${NC} ] • Restoring group data..."
+	sleep 1
+	cp shadow /etc/ &>/dev/null
+	echo -e "[ ${green}INFO${NC} ] • Restoring shadow data..."
+	sleep 1
+	cp gshadow /etc/ &>/dev/null
+	echo -e "[ ${green}INFO${NC} ] • Restoring gshadow data..."
+	sleep 1
     cp -r kyt /var/lib/ &>/dev/null
     cp -r xray /etc/ &>/dev/null
     cp -r html /var/www/ &>/dev/null
     rm -rf /root/backup
     rm -f backup.zip
-    echo -e "[ ${green}INFO${NC} ] • Restauración terminada... "
-    read -n 1 -s -r -p "Presione cualquier tecla para regresar al MENU"
+    echo -e "[ ${green}INFO${NC} ] • Done Restore... "
+    read -n 1 -s -r -p "Press any key to back on menu"
     menu
 }
 
@@ -148,7 +148,7 @@ autoBackup() {
         echo "Turn On"
     fi
     sleep 1
-    read -n 1 -s -r -p "Presione cualquier tecla para regresar al menu Bot"
+    read -n 1 -s -r -p "Press any key to back on Bot menu"
     botbckpBot_menu
 }
 
@@ -164,7 +164,7 @@ botbckpBot_menu() {
 	echo -e " ${Blue}│$NC\033[41m               Telegram Bot (AutoBackup)               \E[0m"
 	echo -e " ${Blue}╰═══════════════════════════════════════════════════════╯${NC}"
     echo -e " ${Blue}╭═══════════════════════════════════════════════════════╮${NC}"
-    echo -e " ${Blue}│$NC ${green} VPS Data Backup By JERRY"
+    echo -e " ${Blue}│$NC ${green} VPS Data Backup By TEMPEST"
     echo -e " ${Blue}│$NC"
     echo -e " ${Blue}│$NC ${green} Status AutoBackup : $sts"
     echo -e " ${Blue}│$NC [${green}1${NC}] Setup Bot Telegram \e[0m"
@@ -203,7 +203,7 @@ botbckpBot_menu() {
 }
 clear
 [[ ! -f /root/.bckupbot ]] && {
-    echo "Ingrese Primero los Detalles del Bot"
+    echo "Please Input Bot Details First"
     sleep 2
     clear
     read -p "Bot Token : " getToken
@@ -212,7 +212,7 @@ clear
     echo "$adminID" >>/root/.bckupbot
     echo "switch off" >>/root/.bckupbot
 }
-read -t 10 -p "Respaldar y/n?  " directBckp
+read -t 10 -p "Backup y/n?  " directBckp
 if [ "${directBckp}" == "n" ]; then
     botbckpBot_menu
 else

@@ -4,11 +4,11 @@ apt install jq curl -y
 clear
 echo -e ""
 echo -e "\033[96;1m============================\033[0m"
-echo -e "\033[93;1m      NTRODUCE SUBDOMAIN"
+echo -e "\033[93;1m      INPUT SUBDOMAIN"
 echo -e "\033[96;1m============================\033[0m"
-echo -e "\033[91;1m Nota: Ejemplo de Subdominio  :\033[0m \033[93mdominio123 \033[0m"
+echo -e "\033[91;1m Note. contoh Subdomain :\033[0m \033[93mbodoh22 \033[0m"
 echo -e " "
-read -p "SUBDOMINIO :  " domen
+read -p "SUBDOMAIN :  " domen
 echo -e ""
 #DOMAIN=ranstore.cloud
 DOMAIN=ranstore.cloud

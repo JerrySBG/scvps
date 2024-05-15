@@ -8,34 +8,33 @@ biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
 ipsaya=$(curl -sS ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/JerrySBG/scvps/main/izin"
+data_ip="https://raw.githubusercontent.com/RanTempest/scvps/main/izinIP"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
     echo -ne
   else
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
-    echo -e "\033[42m DEBES REGISTRAR PRIMERO PARA USAR EL SCRIPT       \033[0m"
+    echo -e "\033[42m          ANDA HARUS MENDAFTAR DAHULU UNTUK MENJADI SELLER         \033[0m"
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
     echo -e ""
-    echo -e "            ${RED}REGISTRA LA VPS !${NC}"
-    echo -e "   \033[0;33mTU VPS${NC} $ipsaya \033[0;33mHA SIDO BANEADA${NC}"
-    echo -e "     \033[0;33mComprar permisos de Acceso para el Scripts${NC}"
-    echo -e "             \033[0;33mContacto Admin :${NC}"
-    echo -e "      ${GREEN}WhatsApp${NC} wa.me/+529241293310"
-    echo -e "      ${Lgreen}Telegram${NC} t.me/Jerry_SGB"
+    echo -e "            ${RED}DAFTAR DULU DEK !${NC}"
+    echo -e "   \033[0;33mYour VPS${NC} $ipsaya \033[0;33mHas been Banned${NC}"
+    echo -e "     \033[0;33mBuy access permissions for scripts${NC}"
+    echo -e "             \033[0;33mContact Admin :${NC}"
+    echo -e "      ${GREEN}WhatsApp${NC} wa.me/6283141751466"
     echo -e "\033[1;93m────────────────────────────────────────────\033[0m"
     exit
   fi
 }
 checking_sc
 clear
-Repo1="https://raw.githubusercontent.com/JerrySBG/scvps/main/"
+Repo1="https://raw.githubusercontent.com/RanTempest/scvps/main/"
 cd izin
 export MYIP=$( curl -sS ipv4.icanhazip.com/ )
-SELLER=$(curl -sS ${Repo1}izin | grep $MYIP | awk '{print $2}')
-Exp100=$(curl -sS ${Repo1}izin | grep $MYIP | awk '{print $3}')
-data_ip="https://raw.githubusercontent.com/JerrySBG/scvps/main/izin"
+SELLER=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $2}')
+Exp100=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $3}')
+data_ip="https://raw.githubusercontent.com/RanTempest/scvps/main/izin"
 cd izin
 d2=$(date -d "$date_list" +"+%s")
 d1=$(date -d "$Exp" +"+%s")
@@ -58,31 +57,29 @@ YELL='\033[1;33m'
 BGX="\033[42m"
 END='\e[0m'
 
-AKTIF="VERIFICADO"
-TOKEN="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"
-REPO="https://github.com/JerrySBG/scvps.git"
-EMAIL="p.layhackbins@gmail.com"
-USER="JerrySBG"
+AKTIF="VERIFIED"
+TOKEN="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"
+REPO="https://github.com/RanTempest/scvps.git"
+EMAIL="rantempest2@gmail.com"
+USER="RanTempest"
 
 
 add-ip() {
 TIMES="10"
-CHATID="833821933"
-KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
+CHATID="6953253803"
+KEY="6311738419:AAFYqB7pbUYA62pKQFA_fyQjEOqzQWoP93U"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 
 
-    today=`date -d "0 Dias" +"%Y-%m-%d"`
-    git clone ${REPO} /scvps &> /dev/null
-    clear
-    cd /scvps
+    today=`date -d "0 days" +"%Y-%m-%d"`
+    git clone ${REPO} /root/scvps/ &> /dev/null
     clear
     echo -e ""
     echo -e ""
-    read -p "  Ingresa la Nueva IP VPS : " ip
-    CLIENT_EXISTS=$(grep -w $ip /izin | wc -l)
+    read -p "  Input IP Address : " ip
+    CLIENT_EXISTS=$(grep -w $ip /root/scvps/izinIP | wc -l)
     if [[ ${CLIENT_EXISTS} == '1' ]]; then
-    echo "IP Ya Existe Actualmente !"
+    echo "IP Already Exist !"
     exit 0
     fi
     echo -e ""
@@ -92,132 +89,130 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     clear
     echo -e ""
     echo -e ""
-    echo "  ¿Cuántos Días Quieres? ?"
-    echo "  [1] 30 Dias"
-    echo "  [2] 60 Dias"
-    echo "  [3] 90 Dias"
-    echo "  [4] Permanente"
-    echo "  [5] Fecha de vencimiento personalizada"
+    echo "  How Much Days Do You Want ?"
+    echo "  [1] 30 Days"
+    echo "  [2] 60 Days"
+    echo "  [3] 90 Days"
+    echo "  [4] Lifetime"
+    echo "  [5] Custom Expiration Date"
     echo -e ""
-    read -p "  Ingresa Numero del Menu : " exp
+    read -p "  Input Menu Number : " exp
 
     if [[ ${exp} == '1' ]]; then
-    exp2=`date -d "30 Dias" +"%Y-%m-%d"`
-    echo "### ${name} ${exp2} ${ip}" >> izin
+    exp2=`date -d "30 days" +"%Y-%m-%d"`
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     elif [[ ${exp} == '2' ]]; then
-    exp2=`date -d "60 Dias" +"%Y-%m-%d"`
-    echo "### ${name} ${exp2} ${ip}" >> izin
+    exp2=`date -d "60 days" +"%Y-%m-%d"`
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     elif [[ ${exp} == '3' ]]; then
-    exp2=`date -d "90 Dias" +"%Y-%m-%d"`
-    echo "### ${name} ${exp2} ${ip}" >> izin
+    exp2=`date -d "90 days" +"%Y-%m-%d"`
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     elif [[ ${exp} == '4' ]]; then
-    exp2="Permamente"
-    echo "### ${name} ${exp2} ${ip}" >> izin
+    exp2="Lifetime"
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     elif [[ ${exp} == '5' ]]; then
-    read -p "Ingresa los Días a Expirar : " exp11
+    read -p "Input Expired Days : " exp11
     exp2=`date -d "$exp11 days" +"%Y-%m-%d"`
-    echo "### ${name} ${exp2} ${ip}" >> izin
+    echo "### ${name} ${exp2} ${ip}" >> /root/scvps/izinIP
     fi
-    cd /scvps
-    #git config --global user.email "${EMAIL}" &> /dev/null
-    #git config --global user.name "${USER}" &> /dev/null
+    cd /root/scvps
+    git config --global user.email "${EMAIL}" &> /dev/null
+    git config --global user.name "${USER}" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
-    git commit -m 1.0 &> /dev/null
-    #git branch -M main &> /dev/null
-    git remote add origin https://github.com/JerrySBG/scvps.git &> /dev/null
-    git push -f origin main &> /dev/null
-    cd izin
-    rm -rf /scvps
+    git commit -m m &> /dev/null
+    git branch -M main &> /dev/null
+    git remote add origin https://github.com/RanTempest/scvps
+    git push -f https://${TOKEN}@github.com/RanTempest/scvps.git &> /dev/null
+    cd izinIp
+    rm -rf /root/scvps
     clear
     sleep 1
-    echo "  Registro de dirección IP..."
+    echo "  Registering IP Address..."
     sleep 1
-    echo "  Procesando..."
+    echo "  Processing..."
     sleep 1
-    echo "  Listo!"
+    echo "  Done!"
     sleep 1
     clear
 TEXT="
 <code>───────────────────────────</code>
-<b>    VPS IP REGISTRADA CON EXITO </b>
+<code>    SUCCES  REGISTERED IP VPS</code>
 <code>───────────────────────────</code>
-<code>USUARIO        : $name</code>
-<code>Direccion IP   : $ip</code>
-<code>Registrado     : $today</code>
-<code>Expiración     : $exp2</code>
+<code>USERNAME       : $name</code>
+<code>IP Address     : $ip</code>
+<code>Registered On  : $today</code>
+<code>Expired On     : $exp2</code>
 <code>───────────────────────────</code>
 "
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
-    echo -e "               \e[1;97mAgregada dirección IP Exitosamente${NC}"
+    echo -e "               \e[1;97mSuccesfully Add IP Address${NC}"
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
 
     echo -e ""
-    echo -e "  ${YELL}USUARIO${NC}       : $name"
-    echo -e "  ${YELL}DIRECCION IP${NC}  : $ip"
-    echo -e "  ${YELL}REGISTRADO   ${NC} : $today"
-    echo -e "  ${YELL}EXPIRACIÓN${NC}    : $exp2"
+    echo -e "  ${YELL}Username${NC}      : $name"
+    echo -e "  ${YELL}IP Address${NC}    : $ip"
+    echo -e "  ${YELL}Registered On${NC} : $today"
+    echo -e "  ${YELL}Expired On${NC}    : $exp2"
     echo ""
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
 
-    read -n 1 -s -r -p "  Presione cualquier tecla para regresar al MENU"
+    read -n 1 -s -r -p "  Press any key to back on menu"
     menu
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 
 del-ip() {
 TIMES="10"
-CHATID="833821933"
-KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
+CHATID="6953253803"
+KEY="6311738419:AAFYqB7pbUYA62pKQFA_fyQjEOqzQWoP93U"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 
-    rm -rf /scvps
-    git clone ${REPO} /scvps &> /dev/null
-    clear
-    cd /scvps
+    rm -rf /root/scvps
+    git clone ${REPO} /root/scvps/ &> /dev/null
     clear
     echo ""
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "          \e[1;97mDirecciones IP Registradas${NC}"
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo ""
-grep -E "      ^###"    "/izin" | cut -d ' ' -f 2-6 | column -t | sort | uniq
-grep -E "      ^#&"    "/izin" | cut -d ' ' -f 2-6 | column -t | sort | uniq
-echo ""
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
+    echo -e "          \e[1;97mList IP Address Have Been Registered${NC}"
+    echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
+    echo ""
+    grep -E "^###"    "/root/ipvps/ip" | cut -d ' ' -f 2-6 | column -t | sort | uniq
+    grep -E "^#&"    "/root/ipvps/ip" | cut -d ' ' -f 2-6 | column -t | sort | uniq
+    echo ""
+    echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
 
-    read -p "   Ingrese la IP a Borrar : " ipdel
-    name=$(cat /izin | grep $ipdel | awk '{print $2}')
-    exp=$(cat /izin| grep $ipdel | awk '{print $3}')
-    if [[ ${exp} == 'PERMANENTE' ]]; then
-    sed -i "/^#&   $name   $exp $ipdel/,/^},{/d" /izin
+    read -p "   Input IP Address To Delete : " ipdel
+    name=$(cat /root/scvps/izinIP | grep $ipdel | awk '{print $2}')
+    exp=$(cat /root/scvps/izinIP | grep $ipdel | awk '{print $3}')
+    if [[ ${exp} == 'Lifetime' ]]; then
+    sed -i "/^#&   $name   $exp $ipdel/,/^},{/d" /root/scvps/izinIP
     else
-    sed -i "/^### $name $exp $ipdel/,/^},{/d" /izin
+    sed -i "/^### $name $exp $ipdel/,/^},{/d" /root/scvps/izinIP
     fi
-    cd /scvps
-    #git config --global user.email "${EMAIL}" &> /dev/null
-    #git config --global user.name "${USER}" &> /dev/null
+    cd /root/scvps
+    git config --global user.email "${EMAIL}" &> /dev/null
+    git config --global user.name "${USER}" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
-    git commit -m 1.0 &> /dev/null
-    #git branch -M main &> /dev/null
-    git remote add origin https://github.com/JerrySBG/scvps.git &> /dev/null
-    git push -f origin main &> /dev/null
-    rm -rf /scvps
+    git commit -m m &> /dev/null
+    git branch -M main &> /dev/null
+    git remote add origin https://github.com/RanTempest/scvps
+    git push -f https://${TOKEN}@github.com/RanTempest/scvps.git &> /dev/null
+    rm -rf /root/scvps
     clear
     sleep 1
-    echo "  Borrado de Direccion IP..."
+    echo "  Delete IP Address..."
     sleep 1
-    echo "  Procesando..."
+    echo "  Processing..."
     sleep 1
-    echo "  Listo!"
+    echo "  Done!"
     sleep 1
     clear
 TEXT1="
 <code>───────────────────────────</code>
-<code>    BORRADO DE IP CON EXITO</code>
+<code>    SUCCES DELETE  IP VPS</code>
 <code>───────────────────────────</code>
 <code>USERNAME       : $name</code>
 <code>IP Address     : $ipdel</code>
@@ -225,7 +220,7 @@ TEXT1="
 <code>───────────────────────────</code>
 "
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
-    echo -e "          \e[1;97mSe Eliminó con Exito la Dirección IP${NC}"
+    echo -e "          \e[1;97mSuccesfully Deleted The IP Address${NC}"
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
     echo ""
     echo -e "  ${YELL}Username${NC}   : $name"
@@ -234,65 +229,62 @@ TEXT1="
     echo ""
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
 
-    read -n 1 -s -r -p "  Presione cualquier tecla para regresar al MENU"
+    read -n 1 -s -r -p "  Press any key to back on menu"
     menu
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT1&parse_mode=html" $URL >/dev/null
 }
 
 renew-ip() {
 TIMES="10"
-CHATID="833821933"
-KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
+CHATID="6953253803"
+KEY="6311738419:AAFYqB7pbUYA62pKQFA_fyQjEOqzQWoP93U"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 
-    rm -rf /root/scvps
-    git clone ${REPO} /scvps &> /dev/null
+    rm -rf /root/ipvps
+    git clone ${REPO} /root/scvps/ &> /dev/null
     clear
-    cd /scvps
-    clear
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "          \e[1;97mDirecciones IP Registradas${NC}"
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo ""
-grep -E "      ^###"    "/izin" | cut -d ' ' -f 2-6 | column -t | sort | uniq
-grep -E "      ^#&"    "/izin" | cut -d ' ' -f 2-6 | column -t | sort | uniq
-echo ""
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
+    echo -e "          \e[1;97mList IP Address Have Been Registered${NC}"
+    echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
     echo ""
-    read -p "  Ingresa la IP a Renovar : " ipdel
-    read -p "  Ingresa los Dias  : " days
-    name=$(cat /izin | grep $ipdel | awk '{print $2}')
-    exp=$(cat /izin | grep $ipdel | awk '{print $3}')
+    grep -E "^###" "/root/ipvps/ip" | cut -d ' ' -f 2-6 | column -t | sort | uniq
+    echo ""
+    echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
+    echo ""
+    read -p "  Input IP Address To Renew : " ipdel
+    read -p "  Input Days  : " days
+    name=$(cat /root/ipvps/iP | grep $ipdel | awk '{print $2}')
+    exp=$(cat /root/ipvps/iP | grep $ipdel | awk '{print $3}')
     now=$(date +%Y-%m-%d)
     d1=$(date -d "$exp" +%s)
     d2=$(date -d "$now" +%s)
     exp2=$(( (d1 - d2) / 86400 ))
     exp3=$(($exp2 + $days))
-    exp4=`date -d "$exp3 Dias" +"%Y-%m-%d"`
-    sed -i "s/### $name $exp $ipdel/### $name $exp4 $ipdel/g" /izin
-    cd /scvps
-    #git config --global user.email "${EMAIL}" &> /dev/null
-    #git config --global user.name "${USER}" &> /dev/null
+    exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
+    sed -i "s/### $name $exp $ipdel/### $name $exp4 $ipdel/g" /root/scvps/izinIP
+    cd /root/scvps
+    git config --global user.email "${EMAIL}" &> /dev/null
+    git config --global user.name "${USER}" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
-    git commit -m 1.0 &> /dev/null
-    #git branch -M main &> /dev/null
-    git remote add origin https://github.com/JerrySBG/scvps.git &> /dev/null
-    git push -f origin main &> /dev/null
-    rm -rf /scvps
+    git commit -m m &> /dev/null
+    git branch -M main &> /dev/null
+    git remote add origin https://github.com/RanTempest/scvps
+    git push -f https://${TOKEN}@github.com/RanTempest/scvps.git &> /dev/null
+    rm -rf /root/scvps
     clear
     sleep 1
-    echo "  Renovando Direccion IP..."
+    echo "  Renew IP Address..."
     sleep 1
-    echo "  Procesando..."
+    echo "  Processing..."
     sleep 1
-    echo "  Listo!"
+    echo "  Done!"
     sleep 1
     clear
 TEXT2="
 <code>───────────────────────────</code>
-<b>    RENOVADA IP VPS CON EXITO </b>
+<code>    SUCCES RENEW  IP VPS</code>
 <code>───────────────────────────</code>
 <code>USERNAME       : $name</code>
 <code>IP Address     : $ipdel</code>
@@ -301,7 +293,7 @@ TEXT2="
 "
     echo ""
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
-    echo -e "          \e[1;97mRenovada con Exito la Dirección IP${NC}"
+    echo -e "          \e[1;97mSuccesfully Renew The IP Address${NC}"
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
 
    echo ""
@@ -312,7 +304,7 @@ TEXT2="
     echo -e "${BlueCyan} ———————————————————————————————————————${Xark}"
 
 
-    read -n 1 -s -r -p "Presione cualquier tecla para regresar al MENU"
+    read -n 1 -s -r -p "Press any key to back on menu"
     menu
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT2&parse_mode=html" $URL >/dev/null
 }
@@ -320,29 +312,19 @@ curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$T
 clear
 
 echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "          [ MENU DE REGISTRO DE IP VPS]${NC}"
-echo -e "          NOMBRE DE USUARIO   : $SELLER "
-echo -e "          ESTADO DEL USUARIO : $AKTIF "
+echo -e "  [ REGISTER IP MENU ]${NC}"
+echo -e "   SELLER NAME   : $SELLER "
+echo -e "   SELLER STATUS : $AKTIF "
 echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e ""
-echo ""
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "          \e[1;97mDirecciones IP Registradas${NC}"
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo ""
-grep -E "      ^###"    "/izin" | cut -d ' ' -f 2-6 | column -t | sort | uniq
-grep -E "      ^#&"    "/izin" | cut -d ' ' -f 2-6 | column -t | sort | uniq
-echo ""
-echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo ""
-echo -e "  ${grenbo}[1]$NC  ${YELL}AGREGAR IP VPS"$NC
-echo -e "  ${grenbo}[2]$NC  ${YELL}BORRAR IP VPS"$NC
-echo -e "  ${grenbo}[3]$NC  ${YELL}RENOVAR IP VPS"$NC
-echo -e "  ${grenbo}[4]$NC  ${YELL}SALIR "$NC
+echo -e "  ${grenbo}[1]$NC  ${YELL}Add IP VPS"$NC
+echo -e "  ${grenbo}[2]$NC  ${YELL}Delete IP VPS"$NC
+echo -e "  ${grenbo}[3]$NC  ${YELL}Renew IP VPS"$NC
+echo -e "  ${grenbo}[4]$NC  ${YELL}EXIT ADD IP"$NC
 echo -e ""
 echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
-read -p "  Por Favor, Ingresa Numero del Menu : " menu
+read -p "  Please Input Menu Number : " menu
 case $menu in
 1 | 01)
 clear
@@ -359,11 +341,11 @@ renew-ip
 
 4 | 04)
 clear
-menu
+exit
 ;;
 
 *)
-echo "Por Favor, Ingresa Un Numero Valido del MENU !"
+echo "Please Input An Correct Menu !"
 sleep 1
 menu
 ;;
