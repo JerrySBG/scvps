@@ -148,7 +148,7 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 
 if [ -f "/etc/xray/domain" ]; then
 echo ""
-echo -e "[ ${yell}DETECTADO${NC} ] ${BIBlue}Script ya Instalado"
+echo -e "[ ${yell} ADVERTENCIA${NC} ] ${BIBlue}Script ya Instalado"
 echo -ne "[ ${red}ATENCION${NC} ] ${BIBlue}¿Quieres Instalar de Nuevo? ? (y/n)? "
 read answer
 if [ "$answer" == "${answer#[Yy]}" ] ;then
@@ -336,19 +336,19 @@ KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $2}')
 EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $3}')
-TIMEZONE=$(printf '%(%I:%M %p)T')
+TIMEZONE=$(printf '%(%I:%M:%S %pT')
 TEXT="
 <code>────────────────────</code>
-<b> 🟢 NOTIFICACION DE VPS 🟢</b>
+<b> 🟢 NOTIFICATIONS INSTALL 🟢</b>
 <code>────────────────────</code>
-<code>USUARIO : </code><code>$USRSC</code>
-<code>DOMINIO : </code><code>$domain</code>
-<code>FEHCA   : </code><code>$TIME</code>
-<code>HORA    : </code><code>$TIMEZONE</code>
-<code>IP VPS  : </code><code>$ipsaya</code>
-<code>Exp Sc  : </code><code>$EXPSC</code>
+<code>ID Usuario : </code><code>$USRSC</code>
+<code>Dominio   : </code><code>$domain</code>
+<code>Fecha     : </code><code>$TIME</code>
+<code>Hora Inst  : </code><code>$TIMEZONE</code>
+<code>IP VPS    : </code><code>$ipsaya</code>
+<code>Exp Script : </code><code>$EXPSC</code>
 <code>────────────────────</code>
-<i>AUTOSCRIPT INSTALADO BY JERRY®</i>
+<i>Ibstalacion Correcta del Autoscript BY JERRY®</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/Jerry_SBG"},{"text":"Contack","url":"https://wa.me/+529241293310"}]]}'
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
@@ -803,8 +803,17 @@ print_success "Fail2ban Instalado"
 function ins_epro(){
 clear
 print_install "Instalación ePro WebSocket Proxy"
-    wget https://${REPO}websocket/edu.sh && chmod +x edu.sh && ./edu.sh
-
+    wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
+    wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
+    chmod +x /etc/systemd/system/ws.service
+    chmod +x /usr/bin/ws
+    chmod 644 /usr/bin/tun.conf
+systemctl disable ws
+systemctl stop ws
+systemctl enable ws
+systemctl start ws
+systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
