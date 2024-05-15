@@ -1,5 +1,3 @@
-wget https://raw.githubusercontent.com/JerrySBG/scvps/main/kyt.sh && chmod +x kyt.sh && ./kyt.sh
-
 ### INSTALAR SCRIPT 
 <pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/JerrySBG/scvps/main/premi.sh && chmod +x premi.sh && ./premi.sh
 </code></pre>
@@ -35,7 +33,7 @@ wget https://raw.githubusercontent.com/JerrySBG/scvps/main/kyt.sh && chmod +x ky
 - VMESS GRPC 443
 - VMESS NONTLS 80
 - SSH WS / TLS 443
-- SSH NON TLS 80,8080,8280
+- SSH NON TLS 8880
 - OVPN SSL/TCP 1194
 - SLOWDNS 5300
 ```
