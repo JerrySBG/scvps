@@ -335,8 +335,8 @@ TIMES="10"
 CHATID="833821933"
 KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
-USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $2}')
-EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $ipsaya | awk '{print $3}')
+USRSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/SBG/main/ip | grep $ipsaya | awk '{print $2}')
+EXPSC=$(wget -qO- https://raw.githubusercontent.com/JerrySBG/SBG/main/ip | grep $ipsaya | awk '{print $3}')
 TIMEZONE=$(printf '%(%I:%M:%S %p)T')
 TEXT="
 <code>━━━━━━━━━━━━━━━━━━━━━━━━━</code>
