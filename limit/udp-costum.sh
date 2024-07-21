@@ -5,7 +5,7 @@ mkdir -p /etc/udp
 
 # change to time UTC-6
 echo "change to time UTC-6"
-ln -fs /usr/share/zoneinfo/America/Denver /etc/localtime
+ln -fs /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 
 # install udp-custom
 echo downloading udp-custom

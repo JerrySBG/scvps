@@ -1,19 +1,18 @@
+#!/usr/bin/python
 import socket, threading, thread, select, signal, sys, time, getopt
 
 # Listen
 LISTENING_ADDR = '0.0.0.0'
-if sys.argv[1:]:
-  LISTENING_PORT = sys.argv[1]
-else:
-  LISTENING_PORT = 80  
-#Passwd
+LISTENING_PORT = sys.argv[1]
+
+# Pass
 PASS = ''
 
 # CONST
 BUFLEN = 4096 * 4
 TIMEOUT = 60
-DEFAULT_HOST = '127.0.0.1:143'
-RESPONSE = 'HTTP/1.1 101 <b><font color="cyan"> WebSocket 80 By JERRY</font></b>\r\n\r\nContent-Length: 104857600000\r\n\r\n'
+DEFAULT_HOST = '127.0.0.1:109'
+RESPONSE = 'HTTP/1.1 101 <b><font color="cyan"> WebSocket 8001 By JERRY</font></b>\r\n\r\nContent-Length: 104857600000\r\n\r\n'
 
 class Server(threading.Thread):
     def __init__(self, host, port):
