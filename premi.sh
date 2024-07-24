@@ -804,12 +804,13 @@ function ins_epro(){
 clear
 print_install "Instalación ePro WebSocket Proxy"
     wget -O /usr/bin/ws "${REPO}limit/ws.py" >/dev/null 2>&1
-    #wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}limit/socks.service" >/dev/null 2>&1
+    wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
     #wget -O /etc/systemd/system/socks.service "${REPO}limit/socks.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
+    #chmod +x /etc/systemd/system/socks.service
     chmod +x /usr/bin/ws
-    #chmod 644 /usr/bin/tun.conf
+    chmod 644 /usr/bin/tun.conf
 systemctl disable ws
 systemctl stop ws
 systemctl enable ws
