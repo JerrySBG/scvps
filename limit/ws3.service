@@ -6,7 +6,7 @@ After=syslog.target network-online.target
 [Service]
 User=root
 NoNewPrivileges=true
-ExecStart=/usr/bin/ws2 -f /usr/bin/tun2.conf
+ExecStart=/usr/bin/ws3 -f /usr/bin/tun3.conf
 Restart=on-failure
 RestartPreventExitStatus=23
 LimitNPROC=10000
