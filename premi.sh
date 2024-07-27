@@ -1,6 +1,6 @@
 #!/bin/bash
 ### Color
-timedatectl set-timezone America/Mexico_City
+timedatectl set-timezone America/Denver
 apt upgrade -y
 apt update -y
 apt install lolcat -y
@@ -142,7 +142,7 @@ start=$(date +%s)
 secs_to_human() {
     echo "Tiempo de Instalación : $((${1} / 3600)) hours $(((${1} / 60) % 60)) minute's $((${1} % 60)) seconds"
 }
-ln -fs /usr/share/zoneinfo/America/Mexico_City /etc/localtime
+ln -fs /usr/share/zoneinfo/America/Denver /etc/localtime
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 
@@ -224,7 +224,7 @@ print_install "Crear directorio de xray"
 
 # Change Environment System
 function first_setup(){
-    timedatectl set-timezone America/Mexico_City
+    timedatectl set-timezone America/Denver
     echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
     echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
     print_success "Directory Xray"
@@ -271,7 +271,7 @@ function base_package() {
     clear
     ########
     print_install "Instalación de Paquetes"
-    timedatectl set-timezone America/Mexico_City
+    timedatectl set-timezone America/Denver
     apt install zip pwgen openssl netcat socat cron bash-completion -y
     apt install figlet -y
     apt update -y
@@ -549,7 +549,7 @@ sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 #update
 # set time GMT +7
-ln -fs /usr/share/zoneinfo/America/Mexico_City /etc/localtime
+ln -fs /usr/share/zoneinfo/America/Denver /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
@@ -803,12 +803,10 @@ print_success "Fail2ban Instalado"
 function ins_epro(){
 clear
 print_install "Instalación ePro WebSocket Proxy"
-    wget -O /usr/bin/ws "${REPO}limit/ws.py" >/dev/null 2>&1
+    wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
     wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
     wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
-    #wget -O /etc/systemd/system/socks.service "${REPO}limit/socks.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
-    #chmod +x /etc/systemd/system/socks.service
     chmod +x /usr/bin/ws
     chmod 644 /usr/bin/tun.conf
 systemctl disable ws
@@ -816,6 +814,15 @@ systemctl stop ws
 systemctl enable ws
 systemctl start ws
 systemctl restart ws
+wget -O /usr/bin/ws2 "${REPO}limit/ws2.py" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws2.service "${REPO}limit/ws2.service" >/dev/null 2>&1
+    chmod +x /etc/systemd/system/ws2.service
+    chmod +x /usr/bin/ws2
+systemctl disable ws2
+systemctl stop ws2
+systemctl enable ws2
+systemctl start ws2
+systemctl restart ws2
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
@@ -865,6 +872,7 @@ systemctl restart haproxy
     systemctl enable --now haproxy
     systemctl enable --now netfilter-persistent
     systemctl enable --now ws
+    systemctl enable --now ws2
     systemctl enable --now fail2ban
 history -c
 echo "unset HISTFILE" >> /etc/profile

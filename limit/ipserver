@@ -19,7 +19,6 @@ cat >/etc/iptables/rules.v4 <<-END
 -A INPUT -p tcp -m tcp --dport 10001 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 10000 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 8280 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 3128 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 1194 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
