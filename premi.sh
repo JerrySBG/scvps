@@ -757,8 +757,14 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     curl -sL "$gotop_link" -o /tmp/gotop.deb
     dpkg -i /tmp/gotop.deb >/dev/null 2>&1
     
-        # > Buat swap sebesar 1G
-    dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+# > Buat swap sebesar 1G
+#    dd if=/dev/zero of=/swapfile bs=1024 count=786432
+# > Buat swap sebesar 2G
+#    dd if=/dev/zero of=/swapfile bs=1024 count=1048576
+# > Buat swap sebesar 3G
+#    dd if=/dev/zero of=/swapfile bs=1024 count=2097152
+# > Buat swap sebesar 4G
+    dd if=/dev/zero of=/swapfile bs=1024 count=4194304
     mkswap /swapfile
     chown root:root /swapfile
     chmod 0600 /swapfile >/dev/null 2>&1
@@ -803,30 +809,61 @@ print_success "Fail2ban Instalado"
 function ins_epro(){
 clear
 print_install "Instalación ePro WebSocket Proxy"
-    wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
-    wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
+#    wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
+#    wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
+#    wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
+#    chmod +x /etc/systemd/system/ws.service
+#    chmod +x /usr/bin/ws
+#    chmod 644 /usr/bin/tun.conf
+#systemctl disable ws
+#systemctl stop ws
+#systemctl enable ws
+#systemctl start ws
+#systemctl restart ws
+wget -O /usr/bin/ws "${REPO}limit/ws.py" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws.service "${REPO}limit/socks.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
     chmod +x /usr/bin/ws
-    chmod 644 /usr/bin/tun.conf
+systemctl daemon-reload
 systemctl disable ws
 systemctl stop ws
 systemctl enable ws
 systemctl start ws
 systemctl restart ws
-wget -O /usr/bin/ws.py "${REPO}limit/ws.py" >/dev/null 2>&1
-    wget -O /etc/systemd/system/socks.service "${REPO}limit/socks.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/socks.service
-    chmod +x /usr/bin/ws.py
-systemctl disable ws.py
-systemctl stop ws.py
-systemctl enable ws.py
-systemctl start ws.py
-systemctl restart ws.py
+wget -O /usr/bin/ws2 "${REPO}limit/ws2.py" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws2.service "${REPO}limit/socks2.service" >/dev/null 2>&1
+    chmod +x /etc/systemd/system/ws2.service
+    chmod +x /usr/bin/ws2
+systemctl daemon-reload
+systemctl disable ws2
+systemctl stop ws2
+systemctl enable ws2
+systemctl start ws2
+systemctl restart ws2
+wget -O /usr/bin/ws3 "${REPO}limit/ws3.py" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws3.service "${REPO}limit/socks3.service" >/dev/null 2>&1
+    chmod +x /etc/systemd/system/ws3.service
+    chmod +x /usr/bin/ws3
+systemctl daemon-reload
+systemctl disable ws3
+systemctl stop ws3
+systemctl enable ws3
+systemctl start ws3
+systemctl restart ws3
+wget -O /usr/bin/ws4 "${REPO}limit/ws4.py" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws4.service "${REPO}limit/socks4.service" >/dev/null 2>&1
+    chmod +x /etc/systemd/system/ws4.service
+    chmod +x /usr/bin/ws4
+systemctl daemon-reload
+systemctl disable ws4
+systemctl stop ws4
+systemctl enable ws4
+systemctl start ws4
+systemctl restart ws4
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
-chmod +x /usr/sbin/ftvpn
+#wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
+#chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
