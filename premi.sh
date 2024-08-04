@@ -814,24 +814,15 @@ systemctl stop ws
 systemctl enable ws
 systemctl start ws
 systemctl restart ws
-wget -O /usr/bin/ws2 "${REPO}limit/ws2.py" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws2.service "${REPO}limit/ws2.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws2.service
-    chmod +x /usr/bin/ws2
-    systemctl disable ws2
-systemctl stop ws2
-systemctl enable ws2
-systemctl start ws2
-systemctl restart ws2
-wget -O /usr/bin/ws3 "${REPO}limit/ws3.py" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws3.service "${REPO}limit/ws3.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws3.service
-    chmod +x /usr/bin/ws3
-    systemctl disable ws3
-systemctl stop ws3
-systemctl enable ws3
-systemctl start ws3
-systemctl restart ws3
+wget -O /usr/bin/ws.py "${REPO}limit/ws.py" >/dev/null 2>&1
+    wget -O /etc/systemd/system/socks.service "${REPO}limit/socks.service" >/dev/null 2>&1
+    chmod +x /etc/systemd/system/socks.service
+    chmod +x /usr/bin/ws.py
+systemctl disable ws.py
+systemctl stop ws.py
+systemctl enable ws.py
+systemctl start ws.py
+systemctl restart ws.py
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
 wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
