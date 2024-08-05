@@ -751,7 +751,7 @@ print_success "Backup Server Instalado"
 clear
 function ins_swab(){
 clear
-print_install "Instalación Swap 1 Gb"
+print_install "Instalación Cache 4 Gb"
 gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
     gotop_link="https://github.com/xxxserxxx/gotop/releases/download/v$gotop_latest/gotop_v"$gotop_latest"_linux_amd64.deb"
     curl -sL "$gotop_link" -o /tmp/gotop.deb
@@ -830,40 +830,10 @@ systemctl stop ws
 systemctl enable ws
 systemctl start ws
 systemctl restart ws
-wget -O /usr/bin/ws2 "${REPO}limit/ws2.py" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws2.service "${REPO}limit/socks2.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws2.service
-    chmod +x /usr/bin/ws2
-systemctl daemon-reload
-systemctl disable ws2
-systemctl stop ws2
-systemctl enable ws2
-systemctl start ws2
-systemctl restart ws2
-wget -O /usr/bin/ws3 "${REPO}limit/ws3.py" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws3.service "${REPO}limit/socks3.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws3.service
-    chmod +x /usr/bin/ws3
-systemctl daemon-reload
-systemctl disable ws3
-systemctl stop ws3
-systemctl enable ws3
-systemctl start ws3
-systemctl restart ws3
-wget -O /usr/bin/ws4 "${REPO}limit/ws4.py" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws4.service "${REPO}limit/socks4.service" >/dev/null 2>&1
-    chmod +x /etc/systemd/system/ws4.service
-    chmod +x /usr/bin/ws4
-systemctl daemon-reload
-systemctl disable ws4
-systemctl stop ws4
-systemctl enable ws4
-systemctl start ws4
-systemctl restart ws4
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-#wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
-#chmod +x /usr/sbin/ftvpn
+wget -O /usr/sbin/ftvpn "${REPO}limit/ftvpn" >/dev/null 2>&1
+chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -1051,10 +1021,10 @@ clear
     ins_Fail2ban
     ins_epro
     ins_restart
+    restart_system
     menu
     profile
     enable_services
-    restart_system
 }
 instal
 echo ""
