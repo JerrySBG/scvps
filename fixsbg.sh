@@ -7,6 +7,7 @@ apt install python3 -y
 systemctl stop ws
 systemctl disable ws
 rm -f /etc/systemd/system/ws.service
+systemctl daemon-reload
 
 wget -q -O /usr/sbin/ws.py "${GITHUB_CMD}ws.py"
 chmod +x ws.py
@@ -30,4 +31,5 @@ WantedBy=multi-user.target
 FDLY
 
 systemctl enable ws
+systemctl start ws
 systemctl restart ws
