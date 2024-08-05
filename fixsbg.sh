@@ -20,7 +20,7 @@ After=syslog.target network-online.target
 [Service]
 User=root
 NoNewPrivileges=true
-ExecStart=python3 /usr/sbin/ws.py
+ExecStart=python3 /usr/bin/ws.py
 Restart=on-failure
 RestartPreventExitStatus=23
 LimitNPROC=10000
