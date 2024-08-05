@@ -777,7 +777,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc tracking -v
     
     wget ${REPO}limit/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
-print_success "Swap 1 Gb Instalado"
+print_success "Cache 4 Gb Instalado"
 }
 
 function ins_Fail2ban(){
@@ -809,21 +809,12 @@ print_success "Fail2ban Instalado"
 function ins_epro(){
 clear
 print_install "Instalación ePro WebSocket Proxy"
-#    wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
-#    wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
-#    wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
-#    chmod +x /etc/systemd/system/ws.service
-#    chmod +x /usr/bin/ws
-#    chmod 644 /usr/bin/tun.conf
-#systemctl disable ws
-#systemctl stop ws
-#systemctl enable ws
-#systemctl start ws
-#systemctl restart ws
-wget -O /usr/bin/ws "${REPO}limit/ws.py" >/dev/null 2>&1
-    wget -O /etc/systemd/system/ws.service "${REPO}limit/socks.service" >/dev/null 2>&1
+    wget -O /usr/bin/ws "${REPO}limit/ws" >/dev/null 2>&1
+    wget -O /usr/bin/tun.conf "${REPO}limit/tun.conf" >/dev/null 2>&1
+    wget -O /etc/systemd/system/ws.service "${REPO}limit/ws.service" >/dev/null 2>&1
     chmod +x /etc/systemd/system/ws.service
     chmod +x /usr/bin/ws
+    chmod 644 /usr/bin/tun.conf
 systemctl daemon-reload
 systemctl disable ws
 systemctl stop ws
@@ -879,7 +870,6 @@ systemctl restart haproxy
     systemctl enable --now haproxy
     systemctl enable --now netfilter-persistent
     systemctl enable --now ws
-    systemctl enable --now ws2
     systemctl enable --now fail2ban
 history -c
 echo "unset HISTFILE" >> /etc/profile
