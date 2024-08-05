@@ -9,7 +9,7 @@ systemctl disable ws
 rm -f /etc/systemd/system/ws.service
 systemctl daemon-reload
 
-wget -q -O /usr/sbin/ws.py "${GITHUB_CMD}ws.py"
+wget -q -O /usr/bin/ws.py "${GITHUB_CMD}ws.py"
 chmod +x ws.py
 
 cat > /etc/systemd/system/ws.service <<-FDLY
