@@ -10,13 +10,17 @@
 <pre><code>wget https://raw.githubusercontent.com/JerrySBG/scvps/main/update.sh && chmod +x update.sh && ./update.sh
 </code></pre>
 
+### FIX WEBSOCKET PYTHON
+<pre><code>wget https://raw.githubusercontent.com/JerrySBG/scvps/main/fixsbg.sh && chmod +x fixsbg.sh && ./fixsbg.sh
+</code></pre>
+
 ### TESTEADO EN S.O 
 - UBUNTU 20.04.05
 - DEBIAN 10
 
 ### OTRAS CARACTERISTICAS
-- Agregar intercambio de 1 GB
-- Instalación dinámica
+- Agregado Almacenamiento CACHE de 4 GB
+- Instalación Automática
 - Perfil de Ajuste en el Servidor.
 - Añadido fail2ban
 - Bloquea Automáticamente Algunos Anuncios de Forma Predeterminada.
