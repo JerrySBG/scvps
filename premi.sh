@@ -361,18 +361,18 @@ function password_default() {
     KEY="5340711015:AAEgC3JCrQZ2fkFqfV40UyqLfyzMmXX9BZI"
     TIME="10"
     URL="https://api.telegram.org/bot$KEY/sendMessage"
-    TEXT="Installasi VPN Script Stable V3.0
+    TEXT="  Instalacion AutoScript V1.0
     ============================
-    <code>1 Dispositivo :</code> <code>$tanggal</code>
+    <code>Creado     :</code> <code>$tanggal</code>
     <code>Hostname   :</code> <code>${HOSTNAME}</code>
     <code>IP Vps     :</code> <code>$MYIP</code>
     <code>OS Vps     :</code> <code>$OS_Name</code>
     <code>Kernel     :</code> <code>$Kernel</code>
     <code>Arch       :</code> <code>$Arch</code>
-    <code>Ram Left   :</code> <code>$Ram_Usage MB</code>
-    <code>Ram Used   :</code> <code>$Ram_Total MB</code>
+    <code>Ram Libre  :</code> <code>$Ram_Usage MB</code>
+    <code>Ram Usada  :</code> <code>$Ram_Total MB</code>
     ============================
-    <code>Domain     :</code> <code>$domain</code>
+    <code>Dominio    :</code> <code>$domain</code>
     <code>IP Vps     :</code> <code>$MYIP</code>
     <code>User Login :</code> <code>$Username</code>
     <code>Pass Login :</code> <code>$Password</code>
@@ -1147,7 +1147,7 @@ echo ""
 echo "" | tee -a log-install.txt
 echo -e ""
 sudo hostnamectl set-hostname $username
-echo -e "${YELLOW} Script instalado correctamente"
+echo -e "${YELLOW} Script Instalado Correctamente"
 echo ""
-read -p "$( echo -e "Presione ${YELLOW}[ ${NC}${YELLOW}Enter${NC} ${YELLOW}]${NC} Para Reiniciar") "
+read -p "$( echo -e "${YELLOW}Presione ${YELLOW}[ ${RED}Enter ${YELLOW}]${YELLOW} Para Reiniciar") "
 reboot
