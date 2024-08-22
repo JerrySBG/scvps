@@ -864,7 +864,6 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     wget ${REPO}bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 print_success "Swap 4 Gb Instalado"
 }
-}
 
 function ins_Fail2ban(){
 clear
