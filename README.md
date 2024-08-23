@@ -1,26 +1,30 @@
-### INSTALL SCRIPT 
-<pre><code>apt-get update -y && apt install curl wget bzip2 gzip xz-utils screen && if [[ ! -d /etc/xdtmp ]]; then mkdir -p /etc/xdtmp; fi && wget -q https://raw.githubusercontent.com/JerrySBG/scvps/main/v5.sh && chmod +x v5.sh && screen -S install ./v5.sh
+### ACTUALIZAR VPS 
+<pre><code> apt update && apt upgrade -y && update-grub && sleep 2 && reboot
 </code></pre>
 
-### PERINTAH UPDATE 
-<pre><code>if [[ ! -d /etc/xdtmp ]]; then mkdir -p /etc/xdtmp; fi && wget -q https://raw.githubusercontent.com/JerrySBG/scvps/main/update.sh && chmod +x update.sh && ./update.sh</code></pre>
+### INSTALAR SCRIPT 
+<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/JerrySBG/scvps/main/premi.sh && chmod +x premi.sh && ./premi.sh
+</code></pre>
 
-### TESTED ON OS 
+### ACTUALIZACIÓN DE SCRIPT MANUAL
+<pre><code>wget https://raw.githubusercontent.com/JerrySBG/scvps/main/update.sh && chmod +x update.sh && ./update.sh
+</code></pre>
+
+### TESTEADO EN S.O 
 - UBUNTU 20.04.05
 - DEBIAN 10
 
-### FITUR TAMBAHAN
-- Tambah Swap 1GiB
-- Pemasangan yang dinamis
-- Tuning profile pada server
-- Xray Core
-- Penambahan fail2ban
-- Auto block sebagian ads indo by default
-- Auto clear log per 3 menit
-- Auto deler expired
-- User Details Akun
+### OTRAS CARACTERISTICAS
+- Agregar intercambio de 4 GB
+- Instalación dinámica
+- Perfil de Ajuste en el Servidor.
+- Añadido fail2ban
+- Bloquea Automáticamente Algunos Anuncios de Forma Predeterminada.
+- Registro de Borrado Automático cada 3 minutos
+- Borrado Automatico De Usuarios Expirados
+- Detalles de Cuenta de Usuario
 
-### PORT INFO
+### INFORMACIÓN DE PUERTOS
 ```
 - TROJAN WS 443
 - TROJAN GRPC 443
@@ -31,14 +35,14 @@
 - VLESS NONTLS 80
 - VMESS WS 443
 - VMESS GRPC 443
-- VMESS NONTLS 80
+- VMESS NONTLS 80, 8008, 8080, 8081, 8090, 8280
 - SSH WS / TLS 443
 - SSH NON TLS 8880
 - OVPN SSL/TCP 1194
 - SLOWDNS 5300
 ```
 
-### SETTING CLOUDFLARE
+### CONFIGURACIÓNES CLOUDFLARE
 ```
 - SSL/TLS : FULL
 - SSL/TLS Recommender : OFF
@@ -46,4 +50,3 @@
 - WEBSOCKET : ON
 - Always Use HTTPS : OFF
 - UNDER ATTACK MODE : OFF
-```
