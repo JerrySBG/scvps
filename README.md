@@ -1,6 +1,4 @@
 ### ACTUALIZAR VPS 
-wget -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/JerrySBG/scvps/main/limit/xray.conf" >/dev/null 2>&1
-
 <pre><code> apt update && apt upgrade -y && update-grub && sleep 2 && reboot
 </code></pre>
 
