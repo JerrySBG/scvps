@@ -192,7 +192,7 @@ function print_success() {
     if [[ 0 -eq $? ]]; then
 		clear
         echo -e "${BLUE} ╭══════════════════════════════════════════╮ ${FONT}"
-        echo -e "${purple}      # $1 Instalado Correctamente"
+        echo -e "${purple}      # $1 Instalado"
         echo -e "${BLUE} ╰══════════════════════════════════════════╯ ${FONT}"
         sleep 2
     fi
@@ -1085,7 +1085,7 @@ clear
     install_xray
     ssh
     udp_mini
-    ssh_slow
+    #ssh_slow
     ins_SSHD
     ins_dropbear
     ins_vnstat
