@@ -325,7 +325,7 @@ echo -e "${BLUE}│     \033[1;37mSeleccione Opcion para Configurar Dominio     
 echo -e "${BLUE}╰═══════════════════════════════════════════════════╯${NC}"
 echo -e "${BLUE}╭═══════════════════════════════════════════════════╮${NC}"
 echo -e "${BLUE}│  [ 1 ]  \033[1;37mTu propio Dominio      ${NC}"
-echo -e "${BLUE}│  [ 2 ]  \033[1;37mDominio que tiene el Script  ${NC}"
+echo -e "${BLUE}│  [ 2 ]  \033[1;37mDominio Gratis del Script  ${NC}"
 echo -e "${BLUE}╰═══════════════════════════════════════════════════╯${NC}"
 read -p "   Seleccione los Números 1 o 2 Cualquier Botón (Aleatorio) : " host
 echo ""
@@ -368,8 +368,9 @@ function password_default() {
     TIME="10"
     URL="https://api.telegram.org/bot$KEY/sendMessage"
     TEXT="  
-     🟢 Instalacion AutoScript 🟢
-    ────────────────────────────
+    ============================
+        🟢 Instalacion AutoScript 🟢
+    ============================
     <code>Creado     :</code> <code>$tanggal</code>
     <code>Hostname   :</code> <code>${HOSTNAME}</code>
     <code>IP Vps     :</code> <code>$MYIP</code>
@@ -378,14 +379,14 @@ function password_default() {
     <code>Arch       :</code> <code>$Arch</code>
     <code>Ram Libre  :</code> <code>$Ram_Usage MB</code>
     <code>Ram Usada  :</code> <code>$Ram_Total MB</code>
-    ────────────────────────────
+    ============================
     <code>Dominio    :</code> <code>$domain</code>
     <code>IP Vps     :</code> <code>$MYIP</code>
     <code>User Script:</code> <code>$username</code>
     <code>Exp Script :</code> <code>$exp</code>
     ============================
     (C) Copyright 2024 By JERRY® SBG
-    ────────────────────────────
+    ============================
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/Jerry_SBG"},{"text":"Contack","url":"https://wa.me/+529241293310"}]]}'
 
    curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
