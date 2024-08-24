@@ -25,12 +25,12 @@ clear && clear && clear
 clear;clear;clear
 
   # // Banner
-echo -e "${YELLOW}----------------------------------------------------------${NC}"
-echo -e " ${BLUE} Bienvenido al Auto-Script MOD´s EDICION${NC}"
-echo -e " ${BLUE} Esto Configurará Rápidamente el SCRIPT VPN en su Servidor${NC}"
-echo -e " ${BLUE} Autor : ${RED}JERRY® ${NC}( ${BLUE} Hecho en Mexico ${NC})${NC}"
+echo -e "${BLUE}╭══════════════════════════════════════════════════════════╮ ${FONT}"
+echo -e " ${YELLOW} Bienvenido al Auto-Script MOD´s EDICION${NC}"
+echo -e " ${YELLOW} Esto Configurará Rápidamente el SCRIPT VPN en su Servidor${NC}"
+echo -e " ${YELLOW} Autor : ${RED}JERRY® ${NC}( ${YELLOW} Hecho en Mexico ${NC})${NC}"
 echo -e " ${RED} © DEV JERRY-SBG${YELLOW}(${YELLOW} 2024 ${NC})${NC}"
-echo -e "${YELLOW}----------------------------------------------------------${NC}"
+echo -e "${BLUE}╰══════════════════════════════════════════════════════════╯ ${FONT}"
 echo ""
 sleep 5
 ###### IZIN SC 
@@ -178,7 +178,7 @@ function print_ok() {
 function print_install() {
     clear
 	echo -e "${BLUE} ╭══════════════════════════════════════════╮ ${FONT}"
-    echo -e "${YELLOW} # $1 ${FONT}"
+    echo -e "${YELLOW}      # $1 ${FONT}"
 	echo -e "${BLUE} ╰══════════════════════════════════════════╯ ${FONT}"
     sleep 1
 }
@@ -191,7 +191,7 @@ function print_success() {
     if [[ 0 -eq $? ]]; then
 		clear
         echo -e "${BLUE} ╭══════════════════════════════════════════╮ ${FONT}"
-        echo -e "${purple} # $1 Instalado Correctamente"
+        echo -e "${purple}      # $1 Instalado Correctamente"
         echo -e "${BLUE} ╰══════════════════════════════════════════╯ ${FONT}"
         sleep 2
     fi
@@ -339,7 +339,6 @@ echo -e  "${BLUE}│        \033[1;37mUSAR MI AUTOSCRIPT PREMIUM        ${BLUE}�
 echo -e  "${BLUE}│                \033[1;37mBY JERRY 2024             ${BLUE}│${NC}"
 echo -e  "${BLUE}╰══════════════════════════════════════════╯${NC}"
 echo " "
-until [[ $host1 =~ ^[a-zA-Z0-9_.-]+$ ]]; do 
 read -p "   Introduce tu Sub/Dominio aquí: " host1
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
@@ -912,8 +911,8 @@ systemctl start ws
 systemctl restart ws
 wget -q -O /usr/local/share/xray/geosite.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat" >/dev/null 2>&1
 wget -q -O /usr/local/share/xray/geoip.dat "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat" >/dev/null 2>&1
-#wget -O /usr/sbin/ftvpn "${REPO}ws/ftvpn" >/dev/null 2>&1
-#chmod +x /usr/sbin/ftvpn
+wget -O /usr/sbin/ftvpn "${REPO}ws/ftvpn" >/dev/null 2>&1
+chmod +x /usr/sbin/ftvpn
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
