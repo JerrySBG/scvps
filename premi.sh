@@ -1,5 +1,6 @@
 #!/bin/bash
 ### Color
+WH="\033[1;37m"
 Green="\e[92;1m"
 RED="\033[31m"
 YELLOW="\033[33m"
@@ -8,7 +9,7 @@ purple="\033[1;95m"
 FONT="\033[0m"
 GREENBG="\033[42;37m"
 REDBG="\033[41;37m"
-OK="${purple}--->${FONT}"
+OK="${Green}--->${FONT}"
 ERROR="${RED}[ERROR]${FONT}"
 GRAY="\e[1;30m"
 NC='\e[0m'
@@ -26,10 +27,10 @@ clear;clear;clear
 
   # // Banner
 echo -e "${BLUE}╭═══════════════════════════════════════════════════╮ ${FONT}"
-echo -e " ${YELLOW} Bienvenido al Auto-Script MOD´s EDICION${NC}"
+echo -e " ${YELLOW}     Bienvenido al Auto-Script MOD´s EDICION${NC}"
 echo -e " ${YELLOW} Esto Configurará Rápidamente el SCRIPT en su VPS${NC}"
-echo -e " ${YELLOW} Autor : ${RED}JERRY® ${NC}( ${YELLOW} Hecho en Mexico ${NC})${NC}"
-echo -e " ${RED} © DEV JERRY-SBG${YELLOW}(${YELLOW} 2024 ${NC})${NC}"
+echo -e " ${GRAY}     Autor : ${RED}JERRY® ${NC}( ${GRAY} Hecho en Mexico ${NC})${NC}"
+echo -e " ${RED}        © DEV JERRY-SBG ${NC}(${GRAY} 2024 ${NC})${NC}"
 echo -e "${BLUE}╰═══════════════════════════════════════════════════╯ ${FONT}"
 echo ""
 sleep 5
@@ -60,7 +61,7 @@ checking_sc() {
 checking_sc
 # // Checking Os Architecture
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
-    echo -e "${OK} Su arquitectura es compatible ( ${green}$( uname -m )${NC} )"
+    echo -e "${OK}${BLUE} Su arquitectura es compatible ( ${WH}$( uname -m )${NC} )"
 else
     echo -e "${EROR} Su arquitectura no es compatible ( ${YELLOW}$( uname -m )${NC} )"
     exit 1
@@ -68,9 +69,9 @@ fi
 
 # // Checking System
 if [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "ubuntu" ]]; then
-    echo -e "${OK} Su sistema Operativo es Compatible ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${OK}${BLUE} Su sistema Operativo es Compatible ( ${WH}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 elif [[ $( cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g' ) == "debian" ]]; then
-    echo -e "${OK} Su sistema Operativo es Compatible ( ${green}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
+    echo -e "${OK}${BLUE} Su sistema Operativo es Compatible ( ${WH}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
 else
     echo -e "${EROR} Su Sistema Operativo No es Compatible ( ${YELLOW}$( cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g' )${NC} )"
     exit 1
@@ -80,12 +81,12 @@ fi
 if [[ $IP == "" ]]; then
     echo -e "${EROR} Direccion De IP ( ${YELLOW}No Detectado${NC} )"
 else
-    echo -e "${OK} Direccion De IP ( ${green}$IP${NC} )"
+    echo -e "${OK}${BLUE} Direccion De IP ( ${WH}$IP${NC} )"
 fi
 
 # // Validate Successfull
 echo ""
-read -p "$( echo -e "Presione ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} Para iniciar la instalación") "
+read -p "$( echo -e "${purple}Presione ${GRAY}[ ${NC}${RED}Enter${NC} ${GRAY}]${purple} Para iniciar la instalación") "
 echo ""
 clear
 if [ "${EUID}" -ne 0 ]; then
@@ -135,7 +136,7 @@ datediff() {
 mai="datediff "$Exp" "$DATE""
 
 # Status ExpiRED Active | Geo Project
-Info="(${green}ACTIVO${NC})"
+Info="(${WH}ACTIVO${NC})"
 Error="(${RED}EXPIRADO${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
 Exp1=$(curl https://raw.githubusercontent.com/JerrySBG/scvps/main/izin | grep $MYIP | awk '{print $4}')
