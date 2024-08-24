@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=S+C+R+I+P+T+ㅤBYㅤ+JERRY+S+B+G" />
+<img src="https://readme-typing-svg.herokuapp.com?color=%2336BCF7&center=true&vCenter=true&lines=S+C+R+I+P+T+ㅤBYㅤ+J+E+R+R+Y +S+B+G" />
 </p>
 
 ### ACTUALIZAR VPS 
@@ -31,7 +31,7 @@
 ### INFORMACIÓN DE PUERTOS
 ```
 - Open SSH                : 443, 80, 22         
-- DNS (SLOWDNS)           : 443, 80, 53          
+- DNS (SLOWDNS)           : Todos los Puertos          
 - Dropbear                : 443, 109, 80        
 - Dropbear Websocket      : 443, 109
 - UDP Custom              : 1-65535          
