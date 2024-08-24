@@ -312,7 +312,7 @@ function base_package() {
     echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
     echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
     sudo apt-get install -y speedtest-cli vnstat libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev flex bison make libnss3-tools libevent-dev bc rsyslog dos2unix zlib1g-dev libssl-dev libsqlite3-dev sed dirmngr libxml-parser-perl build-essential gcc g++ python htop lsof tar wget curl ruby zip unzip p7zip-full python3-pip libc6 util-linux build-essential msmtp-mta ca-certificates bsd-mailx iptables iptables-persistent netfilter-persistent net-tools openssl ca-certificates gnupg gnupg2 ca-certificates lsb-release gcc shc make cmake git screen socat xz-utils apt-transport-https gnupg1 dnsutils cron bash-completion ntpdate chrony jq openvpn easy-rsa
-    print_success "Paquetes Instalados"
+    print_success "Paquetes Configurados"
     
 }
 clear
@@ -411,7 +411,7 @@ print_install "Instalación de SSL en el Dominio"
     /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
     ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
     chmod 777 /etc/xray/xray.key
-    print_success "Certificado SSL Instalado"
+    print_success "Certificado SSL"
 }
 
 function make_folder_xray() {
@@ -588,7 +588,7 @@ ln -fs /usr/share/zoneinfo/America/Mexico_City /etc/localtime
 
 # set locale
 sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
-print_success "Password SSH Instalado"
+print_success "Password SSH"
 }
 
 function udp_mini(){
@@ -731,7 +731,7 @@ systemctl disable udp-mini-3
 systemctl stop udp-mini-3
 systemctl enable udp-mini-3
 systemctl start udp-mini-3
-print_success "Servicio de Cuota Límite Instalado"
+print_success "Servicio de Cuota Límite"
 }
 
 function ssh_slow(){
@@ -741,7 +741,7 @@ print_install "Instalar el Módulo SlowDNS Server"
     wget -q -O /tmp/nameserver "${REPO}slowdns/nameserver" >/dev/null 2>&1
     chmod +x /tmp/nameserver
     bash /tmp/nameserver | tee /root/install.log
- print_success "SlowDNS Instalado"
+ print_success "SlowDNS"
 }
 
 clear
@@ -753,7 +753,7 @@ chmod 700 /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 systemctl restart ssh
 /etc/init.d/ssh status
-print_success "SSHD Instalado"
+print_success "SSHD"
 }
 
 clear
@@ -766,7 +766,7 @@ wget -q -O /etc/default/dropbear "${REPO}ssh/dropbear.conf"
 chmod +x /etc/default/dropbear
 /etc/init.d/dropbear restart
 /etc/init.d/dropbear status
-print_success "Dropbear Instalado"
+print_success "Dropbear"
 }
 
 clear
@@ -790,7 +790,7 @@ systemctl enable vnstat
 /etc/init.d/vnstat status
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
-print_success "Vnstat Instalado"
+print_success "Vnstat"
 }
 
 function ins_openvpn(){
@@ -799,7 +799,7 @@ print_install "Instalación OpenVPN"
 #OpenVPN
 wget ${REPO}ssh/openvpn &&  chmod +x openvpn && ./openvpn
 /etc/init.d/openvpn restart
-print_success "OpenVPN Instalado"
+print_success "OpenVPN"
 }
 
 function ins_backup(){
@@ -835,7 +835,7 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 wget -q -O /etc/ipserver "${REPO}ssh/ipserver" && bash /etc/ipserver
-print_success "Backup Server Instalado"
+print_success "Backup Server"
 }
 
 clear
@@ -867,7 +867,7 @@ gotop_latest="$(curl -s https://api.github.com/repos/xxxserxxx/gotop/releases | 
     chronyc tracking -v
     
     wget ${REPO}bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
-print_success "Swap 4 Gb Instalado"
+print_success "Swap 4 Gb"
 }
 
 function ins_Fail2ban(){
@@ -893,7 +893,7 @@ sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/kyt.txt"@g' /etc/default/drop
 
 # Ganti Banner
 wget -O /etc/kyt.txt "${REPO}ssh/issue.net"
-print_success "Fail2ban Instalado"
+print_success "Fail2ban"
 }
 
 function ins_epro(){
@@ -934,7 +934,7 @@ netfilter-persistent reload
 cd
 apt autoclean -y >/dev/null 2>&1
 apt autoremove -y >/dev/null 2>&1
-print_success "ePro WebSocket Proxy Instalado"
+print_success "ePro WebSocket Proxy"
 }
 
 function ins_restart(){
@@ -1052,7 +1052,7 @@ EOF
     else
         TIME_DATE="AM"
     fi
-print_success "Menu Extra Instalado"
+print_success "Menu Extra"
 }
 
 # Restart layanan after install
