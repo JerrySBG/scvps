@@ -8,7 +8,7 @@ purple="\033[1;95m"
 FONT="\033[0m"
 GREENBG="\033[42;37m"
 REDBG="\033[41;37m"
-OK="${Green}--->${FONT}"
+OK="${purple}--->${FONT}"
 ERROR="${RED}[ERROR]${FONT}"
 GRAY="\e[1;30m"
 NC='\e[0m'
@@ -25,12 +25,12 @@ clear && clear && clear
 clear;clear;clear
 
   # // Banner
-echo -e "${BLUE}╭══════════════════════════════════════════════════════════╮ ${FONT}"
+echo -e "${BLUE}╭═══════════════════════════════════════════════════╮ ${FONT}"
 echo -e " ${YELLOW} Bienvenido al Auto-Script MOD´s EDICION${NC}"
-echo -e " ${YELLOW} Esto Configurará Rápidamente el SCRIPT VPN en su Servidor${NC}"
+echo -e " ${YELLOW} Esto Configurará Rápidamente el SCRIPT en su VPS${NC}"
 echo -e " ${YELLOW} Autor : ${RED}JERRY® ${NC}( ${YELLOW} Hecho en Mexico ${NC})${NC}"
 echo -e " ${RED} © DEV JERRY-SBG${YELLOW}(${YELLOW} 2024 ${NC})${NC}"
-echo -e "${BLUE}╰══════════════════════════════════════════════════════════╯ ${FONT}"
+echo -e "${BLUE}╰═══════════════════════════════════════════════════╯ ${FONT}"
 echo ""
 sleep 5
 ###### IZIN SC 
