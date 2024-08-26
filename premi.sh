@@ -179,7 +179,7 @@ function print_ok() {
 function print_install() {
     clear
 	echo -e "${BLUE} ╭══════════════════════════════════════════╮ ${FONT}"
-    echo -e "${YELLOW}      # $1 ${FONT}"
+    echo -e "${YELLOW}  # $1 ${FONT}"
 	echo -e "${BLUE} ╰══════════════════════════════════════════╯ ${FONT}"
     sleep 1
 }
@@ -192,7 +192,7 @@ function print_success() {
     if [[ 0 -eq $? ]]; then
 		clear
         echo -e "${BLUE} ╭══════════════════════════════════════════╮ ${FONT}"
-        echo -e "${purple}      # $1 Instalado"
+        echo -e "${purple}  # $1 Instalado"
         echo -e "${BLUE} ╰══════════════════════════════════════════╯ ${FONT}"
         sleep 2
     fi
