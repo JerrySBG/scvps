@@ -212,9 +212,7 @@ function is_root() {
 print_install "Crear directorio de xray"
     mkdir -p /etc/xray
     
-    curl -s ipinfo.io/city >> /etc/xray/city
     curl -s ifconfig.me > /etc/xray/ipvps
-    curl -s ipinfo.io/org | cut -d " " -f 2-10 >> /etc/xray/isp
     touch /etc/xray/domain
     mkdir -p /var/log/xray
     chown www-data.www-data /var/log/xray
