@@ -7,7 +7,7 @@
 </code></pre>
 
 ### INSTALAR SCRIPT 
-<pre><code>apt install -y && apt update -y && apt upgrade -y && apt install lolcat -y && gem install lolcat && wget -q https://raw.githubusercontent.com/JerrySBG/SBG/main/sbg.sh && chmod +x sbg.sh && ./sbg.sh
+<pre><code> wget -q https://raw.githubusercontent.com/JerrySBG/SBG/main/sbg.sh && chmod +x sbg.sh && ./sbg.sh
 </code></pre>
 
 ### ACTUALIZACIÓN DE SCRIPT MANUAL
