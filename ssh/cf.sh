@@ -1,12 +1,49 @@
-# --------------------------------------------------
-# ENCRYPTED BY B14CK-KN1GH7 (NAFIS FUAD)
-# Github   : http://github.com/nfs-tech-bd
-# Facebook : http://facebook.com/nafis.fuad.904
-# Telegram : http://t.me/Nafisfuad1
-# --------------------------------------------------
-NFS=$(mktemp)
-base64 -d  >${NFS}<<B14CK-KN1GH7
-IyEvYmluL2Jhc2gKIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpNWUlQPSQod2dldCAtcU8tIGlwaW5mby5pby9pcCk7CmFwdCBpbnN0YWxsIGpxIGN1cmwgLXkgPi9kZXYvbnVsbCAyPiYxCmNsZWFyCmVjaG8gLWUgIiIKZWNobyAtZSAiXDAzM1s5NjsxbT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cMDMzWzBtIgplY2hvIC1lICJcMDMzWzkzOzFtICAgICAgTlRST0RVQ0UgU1VCRE9NQUlOIgplY2hvIC1lICJcMDMzWzk2OzFtPT09PT09PT09PT09PT09PT09PT09PT09PT09PVwwMzNbMG0iCmVjaG8gLWUgIlwwMzNbOTE7MW0gTm90YTogRWplbXBsbyBkZSBTdWJkb21pbmlvICA6XDAzM1swbSBcMDMzWzkzbWRvbWluaW8xMjMgXDAzM1swbSIKZWNobyAtZSAiICIKcmVhZCAtcCAiU1VCRE9NSU5JTyA6ICAiIGRvbWVuCmVjaG8gLWUgIiIKRE9NQUlOPWplcnJ5c2JnLmNvbQpTVUJfRE9NQUlOPSR7c3VifS5qZXJyeXNiZy5jb20KQ0ZfSUQ9cGwuYXloYWNrYmluc0BnbWFpbC5jb20KQ0ZfS0VZPTU0MjM1ZjI4NTA2OTY0YWYzZmE0ZThjMmJlNzM0ZjUwYjExZWQKc2V0IC1ldW8gcGlwZWZhaWwKSVA9JCh3Z2V0IC1xTy0gaWZjb25maWcubWUvaXApOwplY2hvICJVcGRhdGluZyBETlMgZm9yICR7U1VCX0RPTUFJTn0uLi4iClpPTkU9JChjdXJsIC1zTFggR0VUICJodHRwczovL2FwaS5jbG91ZGZsYXJlLmNvbS9jbGllbnQvdjQvem9uZXM/bmFtZT0ke0RPTUFJTn0mc3RhdHVzPWFjdGl2ZSIgXAogICAgIC1IICJYLUF1dGgtRW1haWw6ICR7Q0ZfSUR9IiBcCiAgICAgLUggIlgtQXV0aC1LZXk6ICR7Q0ZfS0VZfSIgXAogICAgIC1IICJDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24iIHwganEgLXIgLnJlc3VsdFswXS5pZCkKClJFQ09SRD0kKGN1cmwgLXNMWCBHRVQgImh0dHBzOi8vYXBpLmNsb3VkZmxhcmUuY29tL2NsaWVudC92NC96b25lcy8ke1pPTkV9L2Ruc19yZWNvcmRzP25hbWU9JHtTVUJfRE9NQUlOfSIgXAogICAgIC1IICJYLUF1dGgtRW1haWw6ICR7Q0ZfSUR9IiBcCiAgICAgLUggIlgtQXV0aC1LZXk6ICR7Q0ZfS0VZfSIgXAogICAgIC1IICJDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24iIHwganEgLXIgLnJlc3VsdFswXS5pZCkKCmlmIFtbICIkeyNSRUNPUkR9IiAtbGUgMTAgXV07IHRoZW4KICAgICBSRUNPUkQ9JChjdXJsIC1zTFggUE9TVCAiaHR0cHM6Ly9hcGkuY2xvdWRmbGFyZS5jb20vY2xpZW50L3Y0L3pvbmVzLyR7Wk9ORX0vZG5zX3JlY29yZHMiIFwKICAgICAtSCAiWC1BdXRoLUVtYWlsOiAke0NGX0lEfSIgXAogICAgIC1IICJYLUF1dGgtS2V5OiAke0NGX0tFWX0iIFwKICAgICAtSCAiQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uIiBcCiAgICAgLS1kYXRhICd7InR5cGUiOiJBIiwibmFtZSI6Iicke1NVQl9ET01BSU59JyIsImNvbnRlbnQiOiInJHtJUH0nIiwidHRsIjoxMjAsInByb3hpZWQiOmZhbHNlfScgfCBqcSAtciAucmVzdWx0LmlkKQpmaQoKUkVTVUxUPSQoY3VybCAtc0xYIFBVVCAiaHR0cHM6Ly9hcGkuY2xvdWRmbGFyZS5jb20vY2xpZW50L3Y0L3pvbmVzLyR7Wk9ORX0vZG5zX3JlY29yZHMvJHtSRUNPUkR9IiBcCiAgICAgLUggIlgtQXV0aC1FbWFpbDogJHtDRl9JRH0iIFwKICAgICAtSCAiWC1BdXRoLUtleTogJHtDRl9LRVl9IiBcCiAgICAgLUggIkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbiIgXAogICAgIC0tZGF0YSAneyJ0eXBlIjoiQSIsIm5hbWUiOiInJHtTVUJfRE9NQUlOfSciLCJjb250ZW50IjoiJyR7SVB9JyIsInR0bCI6MTIwLCJwcm94aWVkIjpmYWxzZX0nKQplY2hvICJIb3N0IDogJFNVQl9ET01BSU4iCmVjaG8gIklQPSIgPj4gL3Zhci9saWIva3l0L2lwdnBzLmNvbmYKZWNobyAkU1VCX0RPTUFJTiA+IC9ldGMveHJheS9kb21haW4KZWNobyAkU1VCX0RPTUFJTiA+IC9yb290L2RvbWFpbgpjZApybSAtZiAvcm9vdC9jZi5zaAo=
-B14CK-KN1GH7
-source ${NFS}
-rm -rf ${NFS}
+#!/bin/bash
+# =========================================
+MYIP=$(wget -qO- ipinfo.io/ip);
+apt install jq curl -y >/dev/null 2>&1
+clear
+echo -e ""
+echo -e  "${BLUE}╭═══════════════════════════════════════════════════╮${NC}"
+echo -e  "${BLUE}│  \033[1;37mEjemplo de subdominio XXX.jerrysbg.com Entonces  ${BLUE}│${NC}"
+echo -e  "${BLUE}│  \033[1;37mRemplaza solo XXX que sera tu Subdominio         ${BLUE}│${NC}"
+echo -e  "${BLUE}╰═══════════════════════════════════════════════════╯${NC}"
+echo " "
+read -rp "   Ingresa tu Subdominio aquí sin Espacios y en MINUSCULA: " -e sub
+echo -e ""
+DOMAIN=jerrysbg.com
+SUB_DOMAIN=${sub}.jerrysbg.com
+CF_ID=pl.ayhackbins@gmail.com
+CF_KEY=54235f28506964af3fa4e8c2be734f50b11ed
+set -euo pipefail
+IP=$(wget -qO- ifconfig.me/ip);
+echo "Updating DNS for ${SUB_DOMAIN}..."
+ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" | jq -r .result[0].id)
+
+RECORD=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records?name=${SUB_DOMAIN}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" | jq -r .result[0].id)
+
+if [[ "${#RECORD}" -le 10 ]]; then
+     RECORD=$(curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}' | jq -r .result.id)
+fi
+
+RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records/${RECORD}" \
+     -H "X-Auth-Email: ${CF_ID}" \
+     -H "X-Auth-Key: ${CF_KEY}" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
+echo "Host : $SUB_DOMAIN"
+echo "IP=" >> /var/lib/kyt/ipvps.conf
+echo $SUB_DOMAIN > /etc/xray/domain
+echo $SUB_DOMAIN > /root/domain
+cd
+rm -f /root/cf.sh
