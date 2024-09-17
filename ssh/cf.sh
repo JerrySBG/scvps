@@ -1,49 +1,12 @@
-#!/bin/bash
-# =========================================
-MYIP=$(wget -qO- ipinfo.io/ip);
-apt install jq curl -y >/dev/null 2>&1
-clear
-echo -e ""
-echo -e  "${BLUE}╭═══════════════════════════════════════════════════╮${NC}"
-echo -e  "${BLUE}│  \033[1;37mEjemplo de subdominio XXX.jerrysbg.com Entonces  ${BLUE}│${NC}"
-echo -e  "${BLUE}│  \033[1;37mRemplaza solo XXX que sera tu Subdominio         ${BLUE}│${NC}"
-echo -e  "${BLUE}╰═══════════════════════════════════════════════════╯${NC}"
-echo " "
-read -rp "   Ingresa tu Subdominio aquí sin Espacios y en MINUSCULA: " -e sub
-echo -e ""
-DOMAIN=jerrysbg.com
-SUB_DOMAIN=${sub}.jerrysbg.com
-CF_ID=pl.ayhackbins@gmail.com
-CF_KEY=54235f28506964af3fa4e8c2be734f50b11ed
-set -euo pipefail
-IP=$(wget -qO- ifconfig.me/ip);
-echo "Updating DNS for ${SUB_DOMAIN}..."
-ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
-     -H "X-Auth-Email: ${CF_ID}" \
-     -H "X-Auth-Key: ${CF_KEY}" \
-     -H "Content-Type: application/json" | jq -r .result[0].id)
-
-RECORD=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records?name=${SUB_DOMAIN}" \
-     -H "X-Auth-Email: ${CF_ID}" \
-     -H "X-Auth-Key: ${CF_KEY}" \
-     -H "Content-Type: application/json" | jq -r .result[0].id)
-
-if [[ "${#RECORD}" -le 10 ]]; then
-     RECORD=$(curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records" \
-     -H "X-Auth-Email: ${CF_ID}" \
-     -H "X-Auth-Key: ${CF_KEY}" \
-     -H "Content-Type: application/json" \
-     --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}' | jq -r .result.id)
-fi
-
-RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records/${RECORD}" \
-     -H "X-Auth-Email: ${CF_ID}" \
-     -H "X-Auth-Key: ${CF_KEY}" \
-     -H "Content-Type: application/json" \
-     --data '{"type":"A","name":"'${SUB_DOMAIN}'","content":"'${IP}'","ttl":120,"proxied":false}')
-echo "Host : $SUB_DOMAIN"
-echo "IP=" >> /var/lib/kyt/ipvps.conf
-echo $SUB_DOMAIN > /etc/xray/domain
-echo $SUB_DOMAIN > /root/domain
-cd
-rm -f /root/cf.sh
+# --------------------------------------------------
+# ENCRYPTED BY B14CK-KN1GH7 (NAFIS FUAD)
+# Github   : http://github.com/nfs-tech-bd
+# Facebook : http://facebook.com/nafis.fuad.904
+# Telegram : http://t.me/Nafisfuad1
+# --------------------------------------------------
+NFS=$(mktemp)
+base64 -d  >${NFS}<<B14CK-KN1GH7
+IyEvYmluL2Jhc2gKIyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpNWUlQPSQod2dldCAtcU8tIGlwaW5mby5pby9pcCk7CmFwdCBpbnN0YWxsIGpxIGN1cmwgLXkgPi9kZXYvbnVsbCAyPiYxCmNsZWFyCmVjaG8gLWUgIiIKZWNobyAtZSAgIiR7QkxVRX3ila3ilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDila4ke05DfSIKZWNobyAtZSAgIiR7QkxVRX3ilIIgIFwwMzNbMTszN21FamVtcGxvIGRlIHN1YmRvbWluaW8gWFhYLmplcnJ5c2JnLmNvbSBFbnRvbmNlcyAgJHtCTFVFfeKUgiR7TkN9IgplY2hvIC1lICAiJHtCTFVFfeKUgiAgXDAzM1sxOzM3bVJlbXBsYXphIHNvbG8gWFhYIHF1ZSBzZXJhIHR1IFN1YmRvbWluaW8gICAgICAgICAke0JMVUV94pSCJHtOQ30iCmVjaG8gLWUgICIke0JMVUV94pWw4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWvJHtOQ30iCmVjaG8gIiAiCnJlYWQgLXJwICIgICBJbmdyZXNhIHR1IFN1YmRvbWluaW8gYXF1w60gc2luIEVzcGFjaW9zIHkgZW4gTUlOVVNDVUxBOiAiIC1lIHN1YgplY2hvIC1lICIiCkRPTUFJTj1qZXJyeXNiZy5jb20KU1VCX0RPTUFJTj0ke3N1Yn0uamVycnlzYmcuY29tCkNGX0lEPXBsLmF5aGFja2JpbnNAZ21haWwuY29tCkNGX0tFWT01NDIzNWYyODUwNjk2NGFmM2ZhNGU4YzJiZTczNGY1MGIxMWVkCnNldCAtZXVvIHBpcGVmYWlsCklQPSQod2dldCAtcU8tIGlmY29uZmlnLm1lL2lwKTsKZWNobyAiVXBkYXRpbmcgRE5TIGZvciAke1NVQl9ET01BSU59Li4uIgpaT05FPSQoY3VybCAtc0xYIEdFVCAiaHR0cHM6Ly9hcGkuY2xvdWRmbGFyZS5jb20vY2xpZW50L3Y0L3pvbmVzP25hbWU9JHtET01BSU59JnN0YXR1cz1hY3RpdmUiIFwKICAgICAtSCAiWC1BdXRoLUVtYWlsOiAke0NGX0lEfSIgXAogICAgIC1IICJYLUF1dGgtS2V5OiAke0NGX0tFWX0iIFwKICAgICAtSCAiQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uIiB8IGpxIC1yIC5yZXN1bHRbMF0uaWQpCgpSRUNPUkQ9JChjdXJsIC1zTFggR0VUICJodHRwczovL2FwaS5jbG91ZGZsYXJlLmNvbS9jbGllbnQvdjQvem9uZXMvJHtaT05FfS9kbnNfcmVjb3Jkcz9uYW1lPSR7U1VCX0RPTUFJTn0iIFwKICAgICAtSCAiWC1BdXRoLUVtYWlsOiAke0NGX0lEfSIgXAogICAgIC1IICJYLUF1dGgtS2V5OiAke0NGX0tFWX0iIFwKICAgICAtSCAiQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uIiB8IGpxIC1yIC5yZXN1bHRbMF0uaWQpCgppZiBbWyAiJHsjUkVDT1JEfSIgLWxlIDEwIF1dOyB0aGVuCiAgICAgUkVDT1JEPSQoY3VybCAtc0xYIFBPU1QgImh0dHBzOi8vYXBpLmNsb3VkZmxhcmUuY29tL2NsaWVudC92NC96b25lcy8ke1pPTkV9L2Ruc19yZWNvcmRzIiBcCiAgICAgLUggIlgtQXV0aC1FbWFpbDogJHtDRl9JRH0iIFwKICAgICAtSCAiWC1BdXRoLUtleTogJHtDRl9LRVl9IiBcCiAgICAgLUggIkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbiIgXAogICAgIC0tZGF0YSAneyJ0eXBlIjoiQSIsIm5hbWUiOiInJHtTVUJfRE9NQUlOfSciLCJjb250ZW50IjoiJyR7SVB9JyIsInR0bCI6MTIwLCJwcm94aWVkIjpmYWxzZX0nIHwganEgLXIgLnJlc3VsdC5pZCkKZmkKClJFU1VMVD0kKGN1cmwgLXNMWCBQVVQgImh0dHBzOi8vYXBpLmNsb3VkZmxhcmUuY29tL2NsaWVudC92NC96b25lcy8ke1pPTkV9L2Ruc19yZWNvcmRzLyR7UkVDT1JEfSIgXAogICAgIC1IICJYLUF1dGgtRW1haWw6ICR7Q0ZfSUR9IiBcCiAgICAgLUggIlgtQXV0aC1LZXk6ICR7Q0ZfS0VZfSIgXAogICAgIC1IICJDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24iIFwKICAgICAtLWRhdGEgJ3sidHlwZSI6IkEiLCJuYW1lIjoiJyR7U1VCX0RPTUFJTn0nIiwiY29udGVudCI6Iicke0lQfSciLCJ0dGwiOjEyMCwicHJveGllZCI6ZmFsc2V9JykKZWNobyAiSG9zdCA6ICRTVUJfRE9NQUlOIgplY2hvICJJUD0iID4+IC92YXIvbGliL2t5dC9pcHZwcy5jb25mCmVjaG8gJFNVQl9ET01BSU4gPiAvZXRjL3hyYXkvZG9tYWluCmVjaG8gJFNVQl9ET01BSU4gPiAvcm9vdC9kb21haW4KY2QKcm0gLWYgL3Jvb3QvY2Yuc2gK
+B14CK-KN1GH7
+source ${NFS}
+rm -rf ${NFS}
