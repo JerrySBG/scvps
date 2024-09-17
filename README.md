@@ -7,7 +7,7 @@
 </code></pre>
 
 ### INSTALAR SCRIPT 
-<pre><code>wget -q https://raw.githubusercontent.com/JerrySBG/scvps/main/sbg.sh && chmod +x sbg.sh && ./sbg.sh
+<pre><code>wget https://raw.githubusercontent.com/JerrySBG/scvps/main/sbg.sh && chmod +x sbg.sh && ./sbg.sh
 </code></pre>
 
 ### ACTUALIZACIÓN DE SCRIPT MANUAL
