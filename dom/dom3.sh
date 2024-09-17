@@ -1,40 +1,12 @@
-#!/bin/bash
-
-MYIP=$(wget -qO- icanhazip.com);
-apt install jq curl -y
-
-DOMAIN=xnxxms.cloud
-sub=ByJERRY-`</dev/urandom tr -dc X-Z0-9 | head -c4`
-dns=${sub}.xnxxms.cloud
-CF_ID=kadeknovi148@gmail.com
-CF_KEY=45c11fd84f3ee1ce33070b0b653044e33b051
-set -euo pipefail
-IP=$(wget -qO- icanhazip.com);
-echo "Updating DNS for ${dns}..."
-ZONE=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
--H "X-Auth-Email: ${CF_ID}" \
--H "X-Auth-Key: ${CF_KEY}" \
--H "Content-Type: application/json" | jq -r .result[0].id)
-
-RECORD=$(curl -sLX GET "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records?name=${dns}" \
--H "X-Auth-Email: ${CF_ID}" \
--H "X-Auth-Key: ${CF_KEY}" \
--H "Content-Type: application/json" | jq -r .result[0].id)
-
-if [[ "${#RECORD}" -le 10 ]]; then
-RECORD=$(curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records" \
--H "X-Auth-Email: ${CF_ID}" \
--H "X-Auth-Key: ${CF_KEY}" \
--H "Content-Type: application/json" \
---data '{"type":"A","name":"'${dns}'","content":"'${IP}'","ttl":120,"proxied":false}' | jq -r .result.id)
-fi
-
-RESULT=$(curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records/${RECORD}" \
--H "X-Auth-Email: ${CF_ID}" \
--H "X-Auth-Key: ${CF_KEY}" \
--H "Content-Type: application/json" \
---data '{"type":"A","name":"'${dns}'","content":"'${IP}'","ttl":120,"proxied":false}')
-echo $dns > /root/domain
-echo "$dns" > /etc/xray/domain
-echo "IP=$dns" > /var/lib/ipvps.conf
-cd
+# --------------------------------------------------
+# ENCRYPTED BY B14CK-KN1GH7 (NAFIS FUAD)
+# Github   : http://github.com/nfs-tech-bd
+# Facebook : http://facebook.com/nafis.fuad.904
+# Telegram : http://t.me/Nafisfuad1
+# --------------------------------------------------
+NFS=$(mktemp)
+base64 -d  >${NFS}<<B14CK-KN1GH7
+IyEvYmluL2Jhc2gKCk1ZSVA9JCh3Z2V0IC1xTy0gaWNhbmhhemlwLmNvbSk7CmFwdCBpbnN0YWxsIGpxIGN1cmwgLXkKCkRPTUFJTj14bnh4bXMuY2xvdWQKc3ViPUJ5SkVSUlktYDwvZGV2L3VyYW5kb20gdHIgLWRjIFgtWjAtOSB8IGhlYWQgLWM0YApkbnM9JHtzdWJ9LnhueHhtcy5jbG91ZApDRl9JRD1rYWRla25vdmkxNDhAZ21haWwuY29tCkNGX0tFWT00NWMxMWZkODRmM2VlMWNlMzMwNzBiMGI2NTMwNDRlMzNiMDUxCnNldCAtZXVvIHBpcGVmYWlsCklQPSQod2dldCAtcU8tIGljYW5oYXppcC5jb20pOwplY2hvICJVcGRhdGluZyBETlMgZm9yICR7ZG5zfS4uLiIKWk9ORT0kKGN1cmwgLXNMWCBHRVQgImh0dHBzOi8vYXBpLmNsb3VkZmxhcmUuY29tL2NsaWVudC92NC96b25lcz9uYW1lPSR7RE9NQUlOfSZzdGF0dXM9YWN0aXZlIiBcCi1IICJYLUF1dGgtRW1haWw6ICR7Q0ZfSUR9IiBcCi1IICJYLUF1dGgtS2V5OiAke0NGX0tFWX0iIFwKLUggIkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbiIgfCBqcSAtciAucmVzdWx0WzBdLmlkKQoKUkVDT1JEPSQoY3VybCAtc0xYIEdFVCAiaHR0cHM6Ly9hcGkuY2xvdWRmbGFyZS5jb20vY2xpZW50L3Y0L3pvbmVzLyR7Wk9ORX0vZG5zX3JlY29yZHM/bmFtZT0ke2Ruc30iIFwKLUggIlgtQXV0aC1FbWFpbDogJHtDRl9JRH0iIFwKLUggIlgtQXV0aC1LZXk6ICR7Q0ZfS0VZfSIgXAotSCAiQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uIiB8IGpxIC1yIC5yZXN1bHRbMF0uaWQpCgppZiBbWyAiJHsjUkVDT1JEfSIgLWxlIDEwIF1dOyB0aGVuClJFQ09SRD0kKGN1cmwgLXNMWCBQT1NUICJodHRwczovL2FwaS5jbG91ZGZsYXJlLmNvbS9jbGllbnQvdjQvem9uZXMvJHtaT05FfS9kbnNfcmVjb3JkcyIgXAotSCAiWC1BdXRoLUVtYWlsOiAke0NGX0lEfSIgXAotSCAiWC1BdXRoLUtleTogJHtDRl9LRVl9IiBcCi1IICJDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb24iIFwKLS1kYXRhICd7InR5cGUiOiJBIiwibmFtZSI6Iicke2Ruc30nIiwiY29udGVudCI6Iicke0lQfSciLCJ0dGwiOjEyMCwicHJveGllZCI6ZmFsc2V9JyB8IGpxIC1yIC5yZXN1bHQuaWQpCmZpCgpSRVNVTFQ9JChjdXJsIC1zTFggUFVUICJodHRwczovL2FwaS5jbG91ZGZsYXJlLmNvbS9jbGllbnQvdjQvem9uZXMvJHtaT05FfS9kbnNfcmVjb3Jkcy8ke1JFQ09SRH0iIFwKLUggIlgtQXV0aC1FbWFpbDogJHtDRl9JRH0iIFwKLUggIlgtQXV0aC1LZXk6ICR7Q0ZfS0VZfSIgXAotSCAiQ29udGVudC1UeXBlOiBhcHBsaWNhdGlvbi9qc29uIiBcCi0tZGF0YSAneyJ0eXBlIjoiQSIsIm5hbWUiOiInJHtkbnN9JyIsImNvbnRlbnQiOiInJHtJUH0nIiwidHRsIjoxMjAsInByb3hpZWQiOmZhbHNlfScpCmVjaG8gJGRucyA+IC9yb290L2RvbWFpbgplY2hvICIkZG5zIiA+IC9ldGMveHJheS9kb21haW4KZWNobyAiSVA9JGRucyIgPiAvdmFyL2xpYi9pcHZwcy5jb25mCmNk
+B14CK-KN1GH7
+source ${NFS}
+rm -rf ${NFS}
