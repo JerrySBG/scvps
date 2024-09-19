@@ -1,12 +1,21 @@
-# --------------------------------------------------
-# ENCRYPTED BY B14CK-KN1GH7 (NAFIS FUAD)
-# Github   : http://github.com/nfs-tech-bd
-# Facebook : http://facebook.com/nafis.fuad.904
-# Telegram : http://t.me/Nafisfuad1
-# --------------------------------------------------
-NFS=$(mktemp)
-base64 -d  >${NFS}<<B14CK-KN1GH7
-IyEvYmluL2Jhc2gKIyA9PT09PT09PT09PT09PT09PT09CmV4cG9ydCBCTFVFPSdcMDMzWzE7MzZtJwpleHBvcnQgTkM9J1wwMzNbMG0nCmNsZWFyCnJtIC1yZiAkKHB3ZCkvc2JnLnNoCnJtIC1yZiAkKHB3ZCkvc2JnLnNoLjEKcm0gLXJmICQocHdkKS9zYmcuc2guMgpybSAtcmYgJChwd2QpL3NiZy5zaC4zCmVjaG8gLWUgIiAgJHtCTFVFfeKVreKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVriR7TkN9IgplY2hvIC1lICIgICR7QkxVRX3ilIIgICAgICAgIEFDVFVBTElaQU5ETyBCQVNFIERFIERBVE9TISR7TkN9IgplY2hvIC1lICIgICR7QkxVRX3ilbDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDila8ke05DfSIKc2xlZXAgMwpzeXNjdGwgLXcgbmV0LmlwdjYuY29uZi5hbGwuZGlzYWJsZV9pcHY2PTEgJiYgc3lzY3RsIC13IG5ldC5pcHY2LmNvbmYuZGVmYXVsdC5kaXNhYmxlX2lwdjY9MSAmJiBhcHQtZ2V0IGNsZWFuICYmIHJtIC1yZiAvdmFyL2xpYi9hcHQvbGlzdHMvKiAmJiBhcHQtZ2V0IGNsZWFuICYmIGFwdC1nZXQgdXBkYXRlICYmIGFwdC1nZXQgdXBncmFkZSAteSAmJiBhcHQtZ2V0IGluc3RhbGwgZ2l0ICYmIGFwdC1nZXQgaW5zdGFsbCBnaXQgcHl0aG9uMiAmJiBhcHQtZ2V0IGluc3RhbGwgZ2l0IHB5dGhvbjMgJiYgYXB0LWdldCBpbnN0YWxsIC15IGJ6aXAyIGd6aXAgY29yZXV0aWxzIHNjcmVlbiBjdXJsIHVuemlwCmNsZWFyCmVjaG8gLWUgIiAgJHtCTFVFfeKVreKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVriR7TkN9IgplY2hvIC1lICIgICR7QkxVRX3ilIIgICAgICAgIERFU0NBUkdBTkRPIEFSQ0hJVk9TISR7TkN9IgplY2hvIC1lICIgICR7QkxVRX3ilbDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDila8ke05DfSIKZWNobyAtZSAiIgpzbGVlcCAzCndnZXQgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0plcnJ5U0JHL3NjdnBzL21haW4vc2JnMi5zaCAmJiBjaG1vZCAreCBzYmcyLnNoICYmIC4vc2JnMi5zaAo=
-B14CK-KN1GH7
-source ${NFS}
-rm -rf ${NFS}
+#!/bin/bash
+# ===================
+export BLUE='\033[1;36m'
+export NC='\033[0m'
+clear
+rm -rf $(pwd)/sbg.sh
+rm -rf $(pwd)/sbg.sh.1
+rm -rf $(pwd)/sbg.sh.2
+rm -rf $(pwd)/sbg.sh.3
+echo -e "  ${BLUE}╭══════════════════════════════════════╮${NC}"
+echo -e "  ${BLUE}│        ACTUALIZANDO BASE DE DATOS!${NC}"
+echo -e "  ${BLUE}╰══════════════════════════════════════╯${NC}"
+sleep 3
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt clean && rm -rf /var/lib/apt/lists/* && apt clean && apt update && apt upgrade -y && apt install git && apt install git python2 && apt install git python3
+clear
+echo -e "  ${BLUE}╭══════════════════════════════════════╮${NC}"
+echo -e "  ${BLUE}│        DESCARGANDO ARCHIVOS!${NC}"
+echo -e "  ${BLUE}╰══════════════════════════════════════╯${NC}"
+echo -e ""
+sleep 3
+wget https://raw.githubusercontent.com/JerrySBG/scvps/main/sbg2.sh && chmod +x sbg2.sh && ./sbg2.sh
