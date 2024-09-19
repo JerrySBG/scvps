@@ -1,21 +1,12 @@
-#!/bin/bash
-# ===================
-export BLUE='\033[1;36m'
-export NC='\033[0m'
-clear
-rm -rf $(pwd)/sbg.sh
-rm -rf $(pwd)/sbg.sh.1
-rm -rf $(pwd)/sbg.sh.2
-rm -rf $(pwd)/sbg.sh.3
-echo -e "  ${BLUE}╭══════════════════════════════════════╮${NC}"
-echo -e "  ${BLUE}│        ACTUALIZANDO BASE DE DATOS!${NC}"
-echo -e "  ${BLUE}╰══════════════════════════════════════╯${NC}"
-sleep 3
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt clean && rm -rf /var/lib/apt/lists/* && apt clean && apt update && apt upgrade -y && apt install git && apt install git python2 && apt install git python3
-clear
-echo -e "  ${BLUE}╭══════════════════════════════════════╮${NC}"
-echo -e "  ${BLUE}│        DESCARGANDO ARCHIVOS!${NC}"
-echo -e "  ${BLUE}╰══════════════════════════════════════╯${NC}"
-echo -e ""
-sleep 3
-wget https://raw.githubusercontent.com/JerrySBG/scvps/main/sbg2.sh && chmod +x sbg2.sh && ./sbg2.sh
+# --------------------------------------------------
+# ENCRYPTED BY B14CK-KN1GH7 (NAFIS FUAD)
+# Github   : http://github.com/nfs-tech-bd
+# Facebook : http://facebook.com/nafis.fuad.904
+# Telegram : http://t.me/Nafisfuad1
+# --------------------------------------------------
+NFS=$(mktemp)
+base64 -d  >${NFS}<<B14CK-KN1GH7
+IyEvYmluL2Jhc2gKIyA9PT09PT09PT09PT09PT09PT09CmV4cG9ydCBCTFVFPSdcMDMzWzE7MzZtJwpleHBvcnQgTkM9J1wwMzNbMG0nCmNsZWFyCnJtIC1yZiAkKHB3ZCkvc2JnLnNoCnJtIC1yZiAkKHB3ZCkvc2JnLnNoLjEKcm0gLXJmICQocHdkKS9zYmcuc2guMgpybSAtcmYgJChwd2QpL3NiZy5zaC4zCmVjaG8gLWUgIiAgJHtCTFVFfeKVreKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVkOKVriR7TkN9IgplY2hvIC1lICIgICR7QkxVRX3ilIIgICAgICAgIEFDVFVBTElaQU5ETyBCQVNFIERFIERBVE9TISR7TkN9IgplY2hvIC1lICIgICR7QkxVRX3ilbDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDila8ke05DfSIKc2xlZXAgMwpzeXNjdGwgLXcgbmV0LmlwdjYuY29uZi5hbGwuZGlzYWJsZV9pcHY2PTEgJiYgc3lzY3RsIC13IG5ldC5pcHY2LmNvbmYuZGVmYXVsdC5kaXNhYmxlX2lwdjY9MSAmJiBhcHQgY2xlYW4gJiYgcm0gLXJmIC92YXIvbGliL2FwdC9saXN0cy8qICYmIGFwdCBjbGVhbiAmJiBhcHQgdXBkYXRlICYmIGFwdCB1cGdyYWRlIC15ICYmIGFwdCBpbnN0YWxsIGdpdCAmJiBhcHQgaW5zdGFsbCBnaXQgcHl0aG9uMiAmJiBhcHQgaW5zdGFsbCBnaXQgcHl0aG9uMwpjbGVhcgplY2hvIC1lICIgICR7QkxVRX3ila3ilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDilZDila4ke05DfSIKZWNobyAtZSAiICAke0JMVUV94pSCICAgICAgICBERVNDQVJHQU5ETyBBUkNISVZPUyEke05DfSIKZWNobyAtZSAiICAke0JMVUV94pWw4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWQ4pWvJHtOQ30iCmVjaG8gLWUgIiIKc2xlZXAgMwp3Z2V0IGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9KZXJyeVNCRy9zY3Zwcy9tYWluL3NiZzIuc2ggJiYgY2htb2QgK3ggc2JnMi5zaCAmJiAuL3NiZzIuc2gK
+B14CK-KN1GH7
+source ${NFS}
+rm -rf ${NFS}
