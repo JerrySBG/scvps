@@ -1,0 +1,12 @@
+# --------------------------------------------------
+# ENCRYPTED BY B14CK-KN1GH7 (NAFIS FUAD)
+# Github   : http://github.com/nfs-tech-bd
+# Facebook : http://facebook.com/nafis.fuad.904
+# Telegram : http://t.me/Nafisfuad1
+# --------------------------------------------------
+NFS=$(mktemp)
+base64 -d  >${NFS}<<B14CK-KN1GH7
+IyEvYmluL2Jhc2gKUkVQTz0iaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0plcnJ5U0JHL3NjdnBzL21haW4vIgp3Z2V0IC1xIC1PIC9ldGMvc3lzdGVtZC9zeXN0ZW0vbGltaXR2bWVzcy5zZXJ2aWNlICIke1JFUE99RmxzL2xpbWl0dm1lc3Muc2VydmljZSIgJiYgY2htb2QgK3ggbGltaXR2bWVzcy5zZXJ2aWNlID4vZGV2L251bGwgMj4mMQp3Z2V0IC1xIC1PIC9ldGMvc3lzdGVtZC9zeXN0ZW0vbGltaXR2bGVzcy5zZXJ2aWNlICIke1JFUE99RmxzL2xpbWl0dmxlc3Muc2VydmljZSIgJiYgY2htb2QgK3ggbGltaXR2bGVzcy5zZXJ2aWNlID4vZGV2L251bGwgMj4mMQp3Z2V0IC1xIC1PIC9ldGMvc3lzdGVtZC9zeXN0ZW0vbGltaXR0cm9qYW4uc2VydmljZSAiJHtSRVBPfUZscy9saW1pdHRyb2phbi5zZXJ2aWNlIiAmJiBjaG1vZCAreCBsaW1pdHRyb2phbi5zZXJ2aWNlID4vZGV2L251bGwgMj4mMQp3Z2V0IC1xIC1PIC9ldGMvc3lzdGVtZC9zeXN0ZW0vbGltaXRzaGFkb3dzb2Nrcy5zZXJ2aWNlICIke1JFUE99RmxzL2xpbWl0c2hhZG93c29ja3Muc2VydmljZSIgJiYgY2htb2QgK3ggbGltaXRzaGFkb3dzb2Nrcy5zZXJ2aWNlID4vZGV2L251bGwgMj4mMQp3Z2V0IC1xIC1PIC9ldGMveHJheS9saW1pdC52bWVzcyAiJHtSRVBPfUZscy92bWVzcyIgPi9kZXYvbnVsbCAyPiYxCndnZXQgLXEgLU8gL2V0Yy94cmF5L2xpbWl0LnZsZXNzICIke1JFUE99RmxzL3ZsZXNzIiA+L2Rldi9udWxsIDI+JjEKd2dldCAtcSAtTyAvZXRjL3hyYXkvbGltaXQudHJvamFuICIke1JFUE99RmxzL3Ryb2phbiIgPi9kZXYvbnVsbCAyPiYxCndnZXQgLXEgLU8gL2V0Yy94cmF5L2xpbWl0LnNoYWRvd3NvY2tzICIke1JFUE99RmxzL3NoYWRvd3NvY2tzIiA+L2Rldi9udWxsIDI+JjEKY2htb2QgK3ggL2V0Yy94cmF5L2xpbWl0LnZtZXNzCmNobW9kICt4IC9ldGMveHJheS9saW1pdC52bGVzcwpjaG1vZCAreCAvZXRjL3hyYXkvbGltaXQudHJvamFuCmNobW9kICt4IC9ldGMveHJheS9saW1pdC5zaGFkb3dzb2NrcwpzeXN0ZW1jdGwgZGFlbW9uLXJlbG9hZApzeXN0ZW1jdGwgZW5hYmxlIC0tbm93IGxpbWl0dm1lc3MKc3lzdGVtY3RsIGVuYWJsZSAtLW5vdyBsaW1pdHZsZXNzCnN5c3RlbWN0bCBlbmFibGUgLS1ub3cgbGltaXR0cm9qYW4Kc3lzdGVtY3RsIGVuYWJsZSAtLW5vdyBsaW1pdHNoYWRvd3NvY2tzCg==
+B14CK-KN1GH7
+source ${NFS}
+rm -rf ${NFS}
