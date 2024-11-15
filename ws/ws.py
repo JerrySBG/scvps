@@ -48,7 +48,7 @@ def handle_shutdown(signal_number, frame):
     print("\n[!] Shutting down proxy server...")
     shutdown_event.set()
 
-def start_proxy(host='0.0.0.0', port=10015, upstream_address=('127.0.0.1', 143), max_workers=200):
+def start_proxy(host='0.0.0.0', port=700, upstream_address=('127.0.0.1', 143), max_workers=200):
     # Create proxy server socket
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as proxy_socket:
         proxy_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
