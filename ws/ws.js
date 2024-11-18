@@ -7,7 +7,7 @@ const net = require('net');
 const stream = require('stream');
 const util = require('util');
 var dhost = "127.0.0.1";
-var dport = "109";
+var dport = "2223";
 var mainPort = "10015";
 var outputFile = "outputFile.txt";
 var packetsToSkip = 0;
@@ -55,7 +55,7 @@ setInterval(gcollector, 1000);
 const server = net.createServer();
 server.on('connection', function(socket) {
     var packetCount = 0;
-    var gu = "WS By JERRY";
+    var gu = "Websocket by JERRY";
     //var handshakeMade = false;
     socket.write("HTTP/1.1 101 " + gu.fontcolor("cyan") + "\r\nContent-Length: 104857600000\r\n\r\n", function(err) {
         if(err) {
